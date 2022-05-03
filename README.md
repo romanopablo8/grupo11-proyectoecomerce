@@ -17,3 +17,12 @@ PUBLICO AL QUE APUNTA EL SITIO WEB
 El proyecto consiste en una web para de Lentes deportivos / de sol / playa apuntando a un publico con un espiritu joven / divertidos y con ganas de vivir experiencias inolvidables
 
 
+SIIOS DE REFERENCI / GUIA PARA EL PROYECTO INTEGRADOR
+
+https://rustyoptical.com/company
+https://www.ray-ban.com/latam
+https://www.lafam.com.co/collections/tienda-online-oftalmico
+https://www.coppel.com/lentes-de-sol
+https://nano-vista.com
+
+
