@@ -15,7 +15,7 @@ Pablo Romano, Nuevo en programación, inicie el curso para potenciar mi persona,
 
 Tomás Rodríguez Moreno, tengo 28 años, soy de Córdoba Argentina y estudio programación en Digital House.
 
-Jorge Cabrales, ingeniero Electrónico,,44 años, de Colombia, estudiante de programacion
+Jorge Cabrales, ingeniero Electrónico,,44 años, de Colombia, estudiante de programacion.
 
 PUBLICO AL QUE APUNTA EL SITIO WEB
 
@@ -30,4 +30,20 @@ https://www.lafam.com.co/collections/tienda-online-oftalmico
 https://www.coppel.com/lentes-de-sol
 https://nano-vista.com
 
+REFERENCIA POR QUE FUERON ELEGIDOS
+
+https://www.ray-ban.com/latam
+Se eligió por diseño de la página, robustez y organización de los productos
+
+https://www.lafam.com.co/collections/tienda-online-sol
+El diseño del header y el footer con los logos de las redes sociales
+
+https://www.coppel.com/lentes-de-sol
+diseño del cuerpo con mucha cantidad de productos ofrecidos y carrito de compras.
+
+https://nano-vista.com/
+Formulario y registro de usuario
+
+https://rustyoptical.com/company
+Simplicidad del diseño, logo de la marca.
 
