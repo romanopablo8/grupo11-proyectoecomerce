@@ -33,3 +33,8 @@ https://www.coppel.com/lentes-de-sol diseño del cuerpo con mucha cantidad de pr
 https://nano-vista.com/ Formulario y registro de usuario
 
 https://rustyoptical.com/company Simplicidad del diseño, logo de la marca.
+
+
+LINK DE TRELLO
+
+https://trello.com/b/9GlPQwAL/proyecto-integrador
