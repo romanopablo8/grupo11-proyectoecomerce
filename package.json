@@ -1,0 +1,22 @@
+{
+  "name": "grupo11-proyectoecomerce",
+  "version": "1.0.0",
+  "description": "grupo11-proyectoecomerce\r Proyectoecomerce se posiciona como marca líder dentro del mercado óptico brindando originalidad, tendencia y funcionalidad en sus diseños.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romanopablo8/grupo11-proyectoecomerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romanopablo8/grupo11-proyectoecomerce/issues"
+  },
+  "homepage": "https://github.com/romanopablo8/grupo11-proyectoecomerce#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
