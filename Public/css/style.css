@@ -2,5 +2,83 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "roboto", sans-serif;
+    font-family: 'roboto', sans-serif;
 }
+.registerBody{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center ;
+    padding: 10px;
+    background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+
+}
+.conteiner-register{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px ;
+    border-radius: 5px;
+    height: 400px;
+    
+
+}
+.conteiner-register .titulo-register{
+    font-size: 25px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+    
+}
+.conteiner-register form .userdetalle-register{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: none;
+}
+form .userdetalle-register, .input-register{
+    margin: 20px o 12px 0;
+    width: calc(100% / 2 - 20px);
+    
+    
+
+}
+.userdetalle-register, .input-register ,.detalle-rigister{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    
+}
+ form .userdetalle-register, .input-register input{
+    
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    padding-left: 15px;
+    height: 40px;
+
+}
+form .boton-register {
+    height: 45px;
+    margin: 45px 0;
+    position: relative;
+    left: 100px;
+
+}
+
+form .boton-register input{
+    height: 100%;
+    width: 400px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+    
+
+}
+
+
+
