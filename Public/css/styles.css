@@ -290,6 +290,43 @@ section.btn{
 }
 
 /* FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN  */
+/*carrito*/
+.head-carrito{
+    background-color: white;
+    margin-top: 10px;
+    height: 100px;
+    color: rgb(70, 69, 69);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 1px gray;
+    align-items: center;
+    
+}
+.articulo-carrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.articulo-carrito, .compra-carrito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.compra-carrito{
+   
+}
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width:640px){

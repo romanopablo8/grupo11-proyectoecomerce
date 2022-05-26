@@ -20,6 +20,7 @@
     padding: 25px 30px ;
     border-radius: 5px;
     height: 400px;
+    box-shadow: 1px 0px 1px 0px gray ;
     
 
 }
@@ -77,6 +78,10 @@ form .boton-register input{
     font-weight: 500;
     background: linear-gradient(135deg, #8ac7f0, #bb83d1);
     
+
+}
+form .boton-register input:hover{
+    background: linear-gradient(135deg, #bb83d1, #8ac7f0 );
 
 }
 
