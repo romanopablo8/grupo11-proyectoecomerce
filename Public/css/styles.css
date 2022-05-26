@@ -103,10 +103,10 @@ section.flex-offers  {
 
 .mainOffers, .mainProduct{
     background: linear-gradient(135deg, #2F8F9D, #82DBD8);
-    width: 20%;
+    width: auto;
     min-width: 100px;
     max-width: 150px;
-    height: 5%;
+    height: auto;
     align-items: center;
     text-decoration: none;
     text-align: center;
@@ -217,6 +217,12 @@ footer{
 .flex-footer2 svg{
     margin-left: 20px;
     
+}
+
+section.otrosRecomendados{
+    display: flex;
+    width: 100%;
+    margin: auto;
 }
 
 /* LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN  */
@@ -453,7 +459,38 @@ section.btn{
   
 
 
+/* Detail Detail Detail Detail Detail Detail Detail Detail Detail  */
 
+.flex-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+
+}
+
+.titleDetails{
+    background: linear-gradient(135deg, #2F8F9D, #82DBD8);
+    width: auto;
+    min-width: 100px;
+    max-width: 350px;
+    max-height: 80px;
+    padding: 0px 5px 0px 5px;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    color: black;    
+    margin: auto;
+    margin-top: 1%;
+    
+    border-radius: 5px;
+
+}
+
+
+
+
+/* fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail  */
 
 
 
@@ -490,6 +527,45 @@ section.btn{
         margin-left: 5px;
         
     }
+
+    article.flex_article-detail{
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+        padding: 0px;
+    }
+    .flex-other_img{
+        flex-direction: column;
+        width: auto;
+    }
+    .flex_prod{
+        width: 100%
+    }
+    .precioDetail{
+        width: 20%;
+    }
+    .price_2{
+        padding-bottom: 100%;
+    }
+    .buyDescripcionDetails{
+        flex-direction: column;
+        width: 30%;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    .flex_buy{
+        padding-top: 50%;
+    }
+    .descripcionLarge{
+        flex-direction: row;
+        width: 80%;
+        margin: auto;
+        padding: 10px 5px;
+    }
+    
        
 }
 @media (min-width:768px){
