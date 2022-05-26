@@ -107,6 +107,113 @@ width: 50%;
     
 }
 
+/* LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN  */
+
+section.mainLogin{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 800px;
+    width: 60%;
+    background: #fff;    
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border-radius: 5px;
+    height: 80%;
+
+    
+}
+section.titleLogin{
+    width: 28%;
+    align-items: flex-start;
+    text-align: center;
+    margin-left: 10%;
+    
+    margin-top: 0%;
+    background: #ebebeb;
+    border-radius: 5px;
+}
+.login p{
+    margin-top: 1%;    
+    margin-bottom: 1%;
+    justify-content: center;
+    font-size: 12px;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: none;
+    cursor: pointer;
+    border: none;
+    padding: 3px;
+    width: 100%;
+
+}
+.login {
+    padding-top: 10%;
+    flex-wrap: wrap;
+    
+}
+section.btn{
+    background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    width: 70%;
+    height: 40px;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 10px;
+    cursor: pointer;   
+}
+.inputText input{
+    margin-top: 1%;    
+    margin-bottom: 1%;
+    justify-content: center;
+    font-size: 12px;
+    display: flex;
+    background: #ebebeb;
+    border-radius: 5px;
+    box-shadow: none;
+    cursor: pointer;
+    border: none;
+    padding: 3px;
+    width: 80%;
+    height: 30px;
+}
+
+.botonlogin input{
+    background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+    border-radius: 5px;
+    font-size: 2%;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    width: 80%;
+    height: 40px;
+    margin: 5px 0px 10px 0px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+    transition: all 1s;
+}
+.botonlogin input:hover{
+    background: linear-gradient(135deg, #bb83d1, #8ac7f0);
+}
+
+.holderfooter{
+    margin-top: 5%;
+    background-color: #fff;
+    padding-top: 5%;
+}
+
+/* FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN FIN LOGIN  */
+
+
 @media (min-width:640px){
     .form{display:block
     } 
