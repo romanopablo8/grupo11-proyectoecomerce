@@ -89,6 +89,32 @@ section.flex-offers  {
     flex-wrap: wrap;
     
 }
+.price_2 ,.offers_2{
+font-size: 24px;    
+}
+
+.flex-offers2  {
+    display: flex; 
+   
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+}
+article.flex_article-detail  {
+    display: flex; 
+    
+    flex-direction: column;
+   
+   
+}
+.flex-other_img {
+    display: flex; 
+    
+    flex-direction: row;
+   
+   
+}
+
 article.flex_article  {
     display: flex; 
     
