@@ -19,19 +19,26 @@ header{width: 100%;
     display: flex;
     justify-content:space-around;
     padding: 1.5em 0;
-    background: #eeebeb;
+    background: linear-gradient(135deg, #2F8F9D, #82DBD8);
     border: 1px solid #000000;
     flex-direction: column;
+    
    
 }
 .top-nav{
     display: flex;
     justify-content:space-around;
+    
 }
 .bot-nav ul{
     display: flex;
-    justify-content:center;
+    justify-content:space-around;
     flex-direction:row;
+    width: auto;
+
+}
+.bot-nav ul a{
+    width: 25%;
 }
 header ul li{
     list-style-type: none;
@@ -66,10 +73,12 @@ main section article  div img{
 .conteiner-products {
     
     
-    
+    justify-content: center;
     text-align: center;
-    width: 90vw;
-    margin: 10px 10px 10px 10px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 3%;
+    margin-top: 1%;
     
 }
 main section article{
@@ -84,10 +93,28 @@ main section article:hover{
 
 section.flex-offers  {
     display: flex; 
-   
+    width: auto;
+    margin: auto;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
     
+}
+
+.mainOffers, .mainProduct{
+    background: linear-gradient(135deg, #2F8F9D, #82DBD8);
+    width: 20%;
+    min-width: 100px;
+    max-width: 150px;
+    height: 5%;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    color: black;    
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 5px;
 }
 .price_2 ,.offers_2{
 font-size: 24px;    
@@ -130,12 +157,17 @@ article.flex_article  {
     border: none;
     outline: none;
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     width: 80%;
-    height:30px;
-    margin: 5px 0px 10px 0px;
+    height: 40px;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
     padding: 10px;
-     
+    justify-content: center;
+    text-align: center;
+    display: flex;
     cursor: pointer;
     transition: all 1s;
 }
@@ -146,12 +178,15 @@ article.flex_article  {
     background: linear-gradient(135deg, #bb83d1, #8ac7f0);
 }
 
-footer{width: 100%;
+footer{
+    width: 100%;
+    
 }
 .top-footer{
     
     padding: 2em 0;
-    background: #f8f6f6;
+    /* background: #f8f6f6; */
+    background: linear-gradient(135deg, #2F8F9D, #82DBD8);
     border: 1px solid #000000;
 }
 .top-footer {
@@ -329,7 +364,7 @@ section.btn{
 
 
 
-@media (min-width:640px){
+@media (min-width:480px){
     .navegation{display:block;
     }
     .form{display:block
@@ -376,7 +411,7 @@ section.btn{
         }
 }
 
-@media (min-width:1024px){
+@media (min-width:1279){
     article.flex_article{
         width: 23%;
     } 
