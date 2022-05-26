@@ -37,9 +37,9 @@ section.banner img{
  
 
 /*quiter la otra regla de  imagen de articulo que esta mas abajo*/
-main section article img{
+main section article  div img{
     width:50%;
-   
+  
 }
 .conteiner-products {
     
@@ -67,11 +67,9 @@ article.flex_article  {
    
    
 }
-section article img {
 
-width: 50%;
+footer{width: 100%;
 }
-
 .top-footer{
     
     padding: 2em 0;
