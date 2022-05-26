@@ -13,11 +13,32 @@ body{
     grid-template-rows: auto 1fr auto;
     
 }
+header{width: 100%;
+}
 .top-header{
-   
+    display: flex;
+    justify-content:space-around;
     padding: 1.5em 0;
-    background: #000000;
+    background: #eeebeb;
     border: 1px solid #000000;
+   
+}
+body section{
+    width: 100%;
+}
+section.banner img{
+    box-sizing: border-box ;
+    width: 100%;
+}
+.banner{display: none;
+} 
+.form{display:none}   
+   
+ 
+
+/*quiter la otra regla de  imagen de articulo que esta mas abajo*/
+main section article img{
+    width:50%;
    
 }
 .conteiner-products {
@@ -87,6 +108,12 @@ width: 50%;
 }
 
 @media (min-width:640px){
+    .form{display:block
+    } 
+
+    .banner{display: block;
+    } 
+
    section.flex-offers  {
         flex-direction: row;
         flex-wrap: wrap;
