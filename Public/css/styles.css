@@ -234,7 +234,7 @@ section.otrosRecomendados{
 }
 .flex_article2{
     width: 90%;
-    margin: auto;
+  
    
 }
 /* LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN  */
@@ -489,6 +489,35 @@ section.btn{
 
 }
 
+.bton-buy input{
+    background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+    border-radius: 5px;
+    font-size: 2%;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 12px;
+    width: 80%;
+    height: 40px;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+    transition: all 1s;
+}
+.bton-buy input:hover{
+        background: linear-gradient(135deg, #bb83d1, #8ac7f0);
+}
+.botonydescripRecomend{
+    justify-content: flex-start;
+}
+
+
 .titleDetails{
     background: linear-gradient(135deg, #2F8F9D, #82DBD8);
     width: auto;
@@ -585,10 +614,19 @@ section.btn{
         margin: auto;
         padding: 10px 5px;
     }
+    .flex_img2{
+        float: left;
+        width:  auto;
+        height: auto;
+        background-size: cover;
+    }
     .flex-offers2{
         flex-direction: row;
         margin: auto;
+        width: 90%;
+        background: white;
     }
+
        
 }
 @media (min-width:768px){
