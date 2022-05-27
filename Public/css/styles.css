@@ -244,7 +244,7 @@ section.mainLogin{
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 800px;
+    max-width: 500px;
     width: 60%;
     background: #fff;    
     margin: auto;
@@ -284,6 +284,14 @@ section.titleLogin{
     flex-wrap: wrap;
     
 }
+
+p.sectionRecordarLogin{
+    margin: auto;
+    justify-content: flex-start;
+    width: 80%;
+
+}
+
 section.btn{
     background: linear-gradient(135deg, #8ac7f0, #bb83d1);
     border-radius: 5px;
