@@ -221,10 +221,22 @@ footer{
 
 section.otrosRecomendados{
     display: flex;
-    width: 100%;
+    width: 50%;
     margin: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
 }
+.flex-offers2{
+    flex-direction: column;
+    
 
+}
+.flex_article2{
+    width: 90%;
+    margin: auto;
+   
+}
 /* LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN  */
 
 section.mainLogin{
@@ -565,7 +577,10 @@ section.btn{
         margin: auto;
         padding: 10px 5px;
     }
-    
+    .flex-offers2{
+        flex-direction: row;
+        margin: auto;
+    }
        
 }
 @media (min-width:768px){
