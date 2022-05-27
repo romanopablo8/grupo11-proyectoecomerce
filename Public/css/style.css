@@ -1,18 +1,22 @@
-*{
+/*     */
+/*     */
+/**{
     margin: 0px;
     padding: 00px;
     box-sizing: border-box;
     font-family: 'roboto', sans-serif;
-}
+}     */
+
 .registerBody{
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center ;
     padding: 10px;
     background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+    
+}  
 
-}
+
 .conteiner-register{
     max-width: 700px;
     width: 100%;
@@ -24,6 +28,7 @@
     
 
 }
+
 .conteiner-register .titulo-register{
     font-size: 25px;
     position: relative;
@@ -63,14 +68,14 @@ form .userdetalle-register, .input-register{
 form .boton-register {
     height: 45px;
     margin: 45px 0;
-    position: relative;
+    margin: auto;
     left: 100px;
 
 }
 
 form .boton-register input{
     height: 100%;
-    width: 400px;
+    width: 300px;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -86,4 +91,4 @@ form .boton-register input:hover{
 }
 
 
-
+ 
