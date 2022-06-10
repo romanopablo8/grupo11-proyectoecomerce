@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const index = require('./routes/index');
+const user = require('./routes/users');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -17,9 +18,8 @@ app.listen(3000, ()=>{
 
 app.use('/', index);
 
-app.get('/login', (req,res)=>{
-  res.sendFile(__dirname + '/views/login.html');
-});
+app.use('/login', user);
+
 app.get('/register', (req,res)=>{
   res.sendFile(__dirname + '/views/register.html');
 });

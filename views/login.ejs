@@ -1,0 +1,41 @@
+
+<%- include('./partials/head') -%>
+    <body>
+       
+        <%- include('./partials/header') -%>
+                
+            <main>
+                <section class="mainLogin">
+                    <section class="titleLogin">
+                        Sign-up / Login
+                    </section>
+                        <form action="#">
+                            <section class="login">
+                                <p class="inputText">
+                                    <input type="text" name="usuario" placeholder="Ingresa tu nombre de usuari@" required>
+                                </p>
+                                <p class="inputText">                                
+                                    <input type="password" name="contraseña" placeholder="Ingresa tu contraseña" required>
+                                </p>
+                                <p class="sectionRecordarLogin">                                    
+                                    <input type="radio" class="lblRecord"name="recordarme" id="recordarme">
+                                    <label for="recordarme" class="lblRecord">Recordarme</label>
+                                </p>
+                                <p class="botonlogin">
+                                    <input type="submit" name="boton1" value="Login">
+                                </p>
+                                <p class="botonlogin">
+                                    <input type="submit" name="boton1" value="Olvide Mi Contraseña">
+                                </p>
+                                <p class="botonlogin">
+                                    <input type="submit" name="boton1" value="Registrar">
+                                </p> 
+                            </section>                           
+                        </form>
+                    
+                </section>
+          
+            </main>
+            <%- include('./partials/footer') -%>
+    </body>
+</html>
