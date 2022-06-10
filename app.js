@@ -1,7 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const index = require('./routes/index');
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
 
 
 app.listen(3000, ()=>{
@@ -10,9 +15,8 @@ app.listen(3000, ()=>{
 
 
 
-app.get('/', (req,res)=>{
-  res.sendFile(__dirname + '/views/index.html');
-});
+app.use('/', index);
+
 app.get('/login', (req,res)=>{
   res.sendFile(__dirname + '/views/login.html');
 });
@@ -27,7 +31,7 @@ app.get('/productDetail', (req,res)=>{
 });
 
 
-una ruta para productos . controller // productDetail  y productCar
-una ruta para index . controller  
-una ruta login . controller
-una ruta para registo . controller
+// una ruta para productos . controller // productDetail  y productCar
+// una ruta para index . controller  
+// una ruta login . controller
+// una ruta para registo . controller
