@@ -10,11 +10,11 @@ const controller = {
         res.render('register');
     },
     
-    productCart: function(req,res){
+    productcart: function(req,res){
         res.render('productCart');
     },
     
-    productDetail: function(req,res){
+    productdetail: function(req,res){
         res.render('productDetail');
     }
 }

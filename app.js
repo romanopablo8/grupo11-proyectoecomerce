@@ -14,8 +14,8 @@ app.listen(3000, ()=>{
 app.use('/', index);
 app.use('/login', index);
 app.get('/register', index);
-app.get('/productCart', index);
-app.get('/productDetail', index);
+app.get('/productcart', index);
+app.get('/productdetail', index);
 
 
 // una ruta para productos . controller // productDetail  y productCar
