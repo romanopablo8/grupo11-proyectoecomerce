@@ -1,10 +1,10 @@
-const express = require('express');
-const router  = express.Router();
+// const express = require('express');
+// const router  = express.Router();
 
-const controller = require( '../controllers/user' );
+// const controller = require( '../controllers/user' );
 
-/* GET LOGIN/REGISTER page. */
-router.get( '/login', controller.login );
-router.get( '/register', controller.register);
+// /* GET LOGIN/REGISTER page. */
+// router.get( '/login', controller.login );
+// router.get( '/register', controller.register);
 
-module.exports = router;
+// module.exports = router;
