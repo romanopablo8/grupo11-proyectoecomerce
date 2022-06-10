@@ -1,13 +1,13 @@
-// const user = {
+const controller = {
+    login: function( req, res ) {
+        res.render('login')
+    },
+    register: function(req,res){
+        res.render('register');
+    },
+    login: function( req, res ) {
+        res.render('login')
+    }
+}
 
-//     login: function( req, res ) {
-
-//         res.render('login')
-
-//     },
-//     register: function(req,res){
-//         res.render('register');
-//     }
-// };
-
-// module.exports = user;
+module.exports = controller;
