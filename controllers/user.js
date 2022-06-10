@@ -1,15 +1,13 @@
-const user = {
+// const user = {
 
-    login: function( req, res ) {
+//     login: function( req, res ) {
 
-        res.render( 'login' );
+//         res.render('login')
 
-    },
-    register: function( req, res ){
+//     },
+//     register: function(req,res){
+//         res.render('register');
+//     }
+// };
 
-        res.render( 'register' )
-
-    }
-};
-
-module.exports = user;
+// module.exports = user;
