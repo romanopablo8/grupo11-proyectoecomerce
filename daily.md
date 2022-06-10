@@ -7,3 +7,5 @@ SE DEFINIERON CANTIDAD DE RUTAS PARA LAS VISTAS A UTILIZAR
 
 
 
+10/6/22
+    controllers, rutas y ejs separados por secciones
