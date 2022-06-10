@@ -27,3 +27,7 @@ app.get('/productDetail', (req,res)=>{
 });
 
 
+una ruta para productos . controller // productDetail  y productCar
+una ruta para index . controller  
+una ruta login . controller
+una ruta para registo . controller
