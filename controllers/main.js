@@ -5,11 +5,11 @@ const controller = {
     },
     
     productcart: function(req,res){
-        res.render('productCart');
+        res.render('products/productCart');
     },
     
     productdetail: function(req,res){
-        res.render('productDetail');
+        res.render('products/productDetail');
     }
 }
 
