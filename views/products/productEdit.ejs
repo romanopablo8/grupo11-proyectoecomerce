@@ -1,0 +1,45 @@
+<%- include('../partials/head') -%>
+    <body>
+        
+        <%- include('../partials/header') -%>
+        
+        <main>
+           
+            <form action="">
+                <section class="productCrear">
+                    <!-- ● Nombre del producto (name) -->
+                    <span for="nombre">Nombre del producto</span>
+                    <input type="text" name="nombre" value="" placeholder="" required>
+
+                    <!-- ● Descripción (description) -->
+                    <span for="descripcion">Descripción</span>
+                    <input type="text" name="descripcion" value="" placeholder="" required>
+
+                    <!-- ● Imagen (image) -->                    
+                    <span for="imgProduct">Imagen</span>
+                    <input type="file" name="imgProduct" value="" placeholder="" required>
+                    
+                    <!-- ● Categoría (category) -->
+                    <span for="categoria">Categoría</span>
+                    <input type="text" name="categoria" value="" placeholder="" required>
+
+                    <!-- ● Colores (o cualquier otro campo similar como: tamaños, talles, etc) -->
+                    <span for="colores">Colores</span>
+                    <input type="radio" name="colores" value="" placeholder="" required>
+
+                    <!-- ● Precio (price)  -->
+                    <span for="precio">Precio</span>
+                    <input type="text" name="precio" value="" placeholder="" required>
+
+                    <!-- BOTONES EDITAR Y CANCELAR -->
+                    <section class="botonlogin">
+                    <input class="botonedit" type="submit" name="EDITAR" value="CREAR" placeholder="">
+                    <input class="botonedit" type="submit" name="CANCELAR" value="CANCELAR" placeholder="">
+                    </section>
+                </section>
+            </form>
+
+        </main>
+
+        <%- include('../partials/footer') -%>
+    </body>

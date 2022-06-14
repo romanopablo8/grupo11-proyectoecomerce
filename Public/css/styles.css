@@ -541,8 +541,51 @@ section.btn{
 
 /* fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail fin Detail  */
 
+/* PRODUCT CREATE PRODUCT CREATE PRODUCT CREATE PRODUCT CREATE PRODUCT CREATE  */
 
+.productCrear{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;    
+    max-width: 500px;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border-radius: 5px;
+    height: 80%;
+}
+.productCrear input{
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    padding-left: 15px;
+    height: 40px;
 
+}
+.botonedit  {
+    background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+    border-radius: 5px;
+    font-size: 2%;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    width: auto;
+    height: 40px;
+    margin: 5px 0px 10px 0px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+    transition: all 1s;
+}
+.botonedit input:hover{
+    background: linear-gradient(135deg, #bb83d1, #8ac7f0);
+}
 
 
 
