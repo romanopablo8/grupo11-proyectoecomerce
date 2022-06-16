@@ -13,8 +13,10 @@ body{
     grid-template-rows: auto 1fr auto;
     
 }
-header{width: 100%;
+header {
+    width: 100%;
 }
+
 .top-header{
     display: flex;
     justify-content:space-around;
@@ -283,6 +285,7 @@ section.titleLogin{
     padding-top: 10%;
     flex-wrap: wrap;
     
+    
 }
 
 p.sectionRecordarLogin{
@@ -319,6 +322,8 @@ section.btn{
     padding: 3px;
     width: 80%;
     height: 30px;
+    border: solid 2px black;
+    border-radius: 5px;
 }
 
 .botonlogin input {
@@ -555,16 +560,20 @@ section.btn{
     margin-bottom: 10%;
     border-radius: 5px;
     height: 80%;
+    border: solid 2px black;
+    border-radius: 5px;
 }
 .productCrear input{
     width: 100%;
     outline: none;
     border-radius: 5px;
-    border: solid 1px #ccc;
+    border: solid 1px black;
     padding-left: 15px;
     height: 40px;
-
 }
+
+
+
 .botonedit  {
     background: linear-gradient(135deg, #8ac7f0, #bb83d1);
     border-radius: 5px;
@@ -670,6 +679,9 @@ section.btn{
       
     }
 
+.burger-menu {
+    font-size: 25px;
+}
        
 }
 @media (min-width:768px){

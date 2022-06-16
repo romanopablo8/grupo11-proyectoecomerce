@@ -60,11 +60,11 @@ form .userdetalle-register, .input-register{
     width: 100%;
     outline: none;
     border-radius: 5px;
-    border: solid 1px #ccc;
     padding-left: 15px;
     height: 40px;
-
+    border: solid 2px black;
 }
+
 form .boton-register {
     height: 45px;
     margin: 45px 0;
@@ -89,6 +89,3 @@ form .boton-register input:hover{
     background: linear-gradient(135deg, #bb83d1, #8ac7f0 );
 
 }
-
-
- 
