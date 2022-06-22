@@ -4,6 +4,7 @@ const router  = express.Router();
 const controller = require( '../controllers/products' );
 
 /* GET products cart / details page. */
+
 router.get( '/productcart', controller.productcart);
 router.get( '/productdetail', controller.productdetail);
 router.get( '/productcreate', controller.productcreate);
