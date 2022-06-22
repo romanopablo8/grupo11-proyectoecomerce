@@ -8,7 +8,11 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const controller = {
-    
+
+    product: function(req,res){
+        res.render('products/product', { products, toThousand }
+        );
+    },
     productcart: function(req,res){
         res.render('products/productCart', { products, toThousand }
         );
