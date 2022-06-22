@@ -43,4 +43,4 @@ Formulario de edición de productos
 6. /products/ :id (PUT)
 Acción de edición (a donde se envía el formulario):
 7. /products/ :id (DELETE)
-Acción de borrado /*
+Acción de borrado /*/
