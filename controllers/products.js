@@ -13,6 +13,18 @@ const controller = {
         res.render('products/product', { products, toThousand }
         );
     },
+    detail: (req, res) => {
+        const id = +req.params.id;
+        let productDetail = products.filter( function( product ){
+
+			return product.id === id;
+
+		});
+        console.log(productDetail);
+        productDetail = productDetail[ 0 ];
+        res.render( 'products/detail', { title: productDetail.name, productDetail, toThousand } );
+    
+    },
     productcart: function(req,res){
         res.render('products/productCart', { products, toThousand }
         );
