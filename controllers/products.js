@@ -13,10 +13,6 @@ const controller = {
         res.render('products/product', { products, toThousand }
         );
     },
-<<<<<<< HEAD
-    
-=======
->>>>>>> d1839f37c1d242572dfb4fde6daf5507a6861055
     productcart: function(req,res){
         res.render('products/productCart', { products, toThousand }
         );
