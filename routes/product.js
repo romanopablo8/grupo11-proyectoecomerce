@@ -9,6 +9,10 @@ router.get( '/productcart', controller.productcart);
 router.get( '/productdetail', controller.productdetail);
 router.get( '/productcreate', controller.productcreate);
 router.get( '/productedit', controller.productedit);
+
+/*** CREATE ONE PRODUCT ***/ 
+router.get('/products/create', controller.create); 
+router.post('/products/create', controller.store); 
 /*** GET ONE PRODUCT ***/ 
 router.get('/products/detail/:id', controller.detail); 
 

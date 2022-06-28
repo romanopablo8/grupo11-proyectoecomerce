@@ -13,6 +13,41 @@ const controller = {
         res.render('products/product', { products, toThousand }
         );
     },
+    create: function(req,res){
+      				res.render('products/productCreate');
+                     
+	},
+    store: function(req,res){
+        let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
+		const id     = products.length + 1;
+
+		let name        = req.body.name;
+		let descripcion = req.body.descripcion;
+		let image       = req.body.image;
+		let category    = req.body.category;
+		let color       = req.body.colors;
+        let price       = req.body.price;
+		
+        let newProduct = {
+
+			id: id,
+            name: name,
+            descripcion:descripcion,
+			image:image,
+            category: category,
+            color:color,
+			price: price,
+					
+		         		};
+
+		products.push( newProduct );
+
+		fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
+
+		res.redirect( '/products' );   
+       
+},
+    
     detail: (req, res) => {
         const id = +req.params.id;
         let productDetail = products.filter( function( product ){
