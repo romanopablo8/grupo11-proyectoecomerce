@@ -15,5 +15,8 @@ router.get('/products/create', controller.create);
 router.post('/products/create', controller.store); 
 /*** GET ONE PRODUCT ***/ 
 router.get('/products/detail/:id', controller.detail); 
+/*** EDIT ONE PRODUCT ***/ 
+router.get('/products/edit/:id', controller.edit); 
+router.put('/products/edit/:id', controller.update); 
 
 module.exports = router;

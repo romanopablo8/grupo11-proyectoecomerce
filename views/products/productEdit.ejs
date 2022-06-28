@@ -1,35 +1,35 @@
-<%- include('../partials/head') -%>
+<%- include('../partials/head', {title: 'Editando: ' + title }) -%>
     <body>
         
         <%- include('../partials/header') -%>
         
         <main>
-           
-            <form action="">
+            <h2 class="products-title">Estás editando: <i><%=productToEdit.id%></i></h2>
+            <form action="/products/edit/<%=productToEdit.id%>?_method=PUT" method="POST">
                 <section class="productCrear">
                     <!-- ● Nombre del producto (name) -->
                     <span for="nombre">Nombre del producto</span>
-                    <input type="text" name="nombre" value="" placeholder="" required>
+                    <input type="text" name="name" value="<%=productToEdit.name%>"  placeholder="Oakley" required>
 
                     <!-- ● Descripción (description) -->
                     <span for="descripcion">Descripción</span>
-                    <input type="text" name="descripcion" value="" placeholder="" required>
+                    <input type="text" name="descripcion" value="<%=productToEdit.descripcion%>" placeholder="editdescripcion" required>
 
                     <!-- ● Imagen (image) -->                    
-                    <span for="imgProduct">Imagen</span>
-                    <input type="file" name="imgProduct" value="" placeholder="" required>
+                    <span for="image">Imagen</span>
+                    <input type="file" name="image" value="<%=productToEdit.image%>" placeholder="/Lentes32.jpg" required>
                     
                     <!-- ● Categoría (category) -->
                     <span for="categoria">Categoría</span>
-                    <input type="text" name="categoria" value="" placeholder="" required>
+                    <input type="text" name="category" value="<%=productToEdit.category%>" placeholder="Gafas de sol" required>
 
                     <!-- ● Colores (o cualquier otro campo similar como: tamaños, talles, etc) -->
                     <span for="colores">Colores</span>
-                    <input type="radio" name="colores" value="" placeholder="" required>
+                    <input type="radio" name="colors" value="<%=productToEdit.colors%>" placeholder="azul" required>
 
                     <!-- ● Precio (price)  -->
                     <span for="precio">Precio</span>
-                    <input type="text" name="precio" value="" placeholder="" required>
+                    <input type="text" name="price" value="<%=productToEdit.price%>" placeholder="99999" required>
 
                     <!-- BOTONES EDITAR Y CANCELAR -->
                     <section class="botonlogin">

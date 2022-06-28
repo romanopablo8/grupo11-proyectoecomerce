@@ -60,6 +60,61 @@ const controller = {
         res.render( 'products/detail', { title: productDetail.name, productDetail, toThousand } );
     
     },
+// Update - Form to edit
+edit: (req, res) => {
+		
+    const id = +req.params.id;
+
+    let productDetail = products.filter( function( product ){
+
+        return product.id === id;
+
+    });
+
+    productDetail = productDetail[ 0 ];
+
+    res.render( 'products/productEdit', { title: productDetail.name, productToEdit: productDetail } );
+
+},
+// Update - Method to update
+update: (req, res) => {
+
+    let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
+    const id     = +req.params.id;
+
+    let name        = req.body.name;
+    let price       = req.body.price;
+    let discount    = req.body.discount;
+    let category    = req.body.category;
+    let description = req.body.description;
+
+    let editProduct = {
+
+        id: id,
+        name: name,
+        price: price,
+        discount: discount,
+        category: category,
+        description: description
+
+    };	
+
+    for( let i in products ) {
+
+        if( products[ i ].id === id ) {
+
+            products[ i ] = editProduct;
+            break;
+
+        }
+
+    }
+
+    fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
+    res.redirect( '/' );
+
+},
+
     productcart: function(req,res){
         res.render('products/productCart', { products, toThousand }
         );
