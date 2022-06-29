@@ -13,6 +13,126 @@ const controller = {
         res.render('products/product', { products, toThousand }
         );
     },
+    create: function(req,res){
+      				res.render('products/productCreate');
+                     
+	},
+    store: function(req,res){
+        let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
+		const id     = products.length + 1;
+
+		let name        = req.body.name;
+		let descripcion = req.body.descripcion;
+		let image       = req.body.image;
+		let category    = req.body.category;
+		let color       = req.body.colors;
+        let price       = req.body.price;
+		
+        let newProduct = {
+
+			id: id,
+            name: name,
+            descripcion:descripcion,
+			image:image,
+            category: category,
+            color:color,
+			price: price,
+					
+		         		};
+
+		products.push( newProduct );
+
+		fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
+
+		res.redirect( '/products' );   
+       
+},
+    
+    detail: (req, res) => {
+        const id = +req.params.id;
+        let productDetail = products.filter( function( product ){
+
+			return product.id === id;
+
+		});
+        console.log(productDetail);
+        productDetail = productDetail[ 0 ];
+        res.render( 'products/detail', { title: productDetail.name, productDetail, toThousand } );
+    
+    },
+// Update - Form to edit
+edit: (req, res) => {
+		
+    const id = +req.params.id;
+
+    let productDetail = products.filter( function( product ){
+
+        return product.id === id;
+
+    });
+
+    productDetail = productDetail[ 0 ];
+
+    res.render( 'products/productEdit', { title: productDetail.name, productToEdit: productDetail } );
+
+},
+// Update - Method to update
+update: (req, res) => {
+
+    let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
+    const id     = +req.params.id;
+
+    let name        = req.body.name;
+    let price       = req.body.price;
+    let discount    = req.body.discount;
+    let category    = req.body.category;
+    let description = req.body.description;
+
+    let editProduct = {
+
+        id: id,
+        name: name,
+        price: price,
+        discount: discount,
+        category: category,
+        description: description
+
+    };	
+
+    for( let i in products ) {
+
+        if( products[ i ].id === id ) {
+
+            products[ i ] = editProduct;
+            break;
+
+        }
+
+    }
+
+    fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
+    res.redirect( '/products' );
+
+},
+	// Delete - Delete one product from DB
+	destroy : (req, res) => {
+
+		let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
+		const id     = +req.params.id;
+
+		let productDestroyed = products.filter( function( product ){
+
+			return product.id !== id;
+
+		});
+
+		console.log( productDestroyed );
+
+		fs.writeFileSync( productsFilePath , JSON.stringify( productDestroyed ), { encoding: 'utf-8' } );
+		res.redirect( '/products' );
+
+	},
+
     productcart: function(req,res){
         res.render('products/productCart', { products, toThousand }
         );
