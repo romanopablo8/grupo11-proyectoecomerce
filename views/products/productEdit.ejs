@@ -29,15 +29,19 @@
 
                     <!-- ● Precio (price)  -->
                     <span for="precio">Precio</span>
-                    <input type="text" name="price" value="<%=productToEdit.price%>" placeholder="99999" required>
+                    <input type="text" name="price" value="<%=productToEdit.colors%>" placeholder="99999" required>
 
                     <!-- BOTONES EDITAR Y CANCELAR -->
                     <section class="botonlogin">
                     <input class="botonedit" type="submit" name="EDITAR" value="EDITAR" placeholder="">
-                    <input class="botonedit" type="submit" name="CANCELAR" value="CANCELAR" placeholder="">
+                    </form>
+                    <form action="/products/delete/<%=productToEdit.id%>?_method=DELETE" method="POST" >
+                        <input class="botonedit" type="submit" name="ELIMINAR" value="ELIMINAR" placeholder="">
+                    </form>
+                   
                     </section>
                 </section>
-            </form>
+            
 
         </main>
 

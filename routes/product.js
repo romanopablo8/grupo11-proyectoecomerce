@@ -18,5 +18,6 @@ router.get('/products/detail/:id', controller.detail);
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/products/edit/:id', controller.edit); 
 router.put('/products/edit/:id', controller.update); 
-
+/*** DELETE ONE PRODUCT***/ 
+router.delete('/products/delete/:id', controller.destroy);
 module.exports = router;

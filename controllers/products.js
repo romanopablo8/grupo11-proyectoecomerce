@@ -111,9 +111,27 @@ update: (req, res) => {
     }
 
     fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
-    res.redirect( '/' );
+    res.redirect( '/products' );
 
 },
+	// Delete - Delete one product from DB
+	destroy : (req, res) => {
+
+		let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
+		const id     = +req.params.id;
+
+		let productDestroyed = products.filter( function( product ){
+
+			return product.id !== id;
+
+		});
+
+		console.log( productDestroyed );
+
+		fs.writeFileSync( productsFilePath , JSON.stringify( productDestroyed ), { encoding: 'utf-8' } );
+		res.redirect( '/products' );
+
+	},
 
     productcart: function(req,res){
         res.render('products/productCart', { products, toThousand }
