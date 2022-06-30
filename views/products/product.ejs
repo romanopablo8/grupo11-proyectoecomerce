@@ -7,17 +7,18 @@
     <section class="flex-offers">
     <% products.forEach( function ( product){ %>
         <article class="flex_article">
-            
+             
              <div >
-                <a href="/products/detail/<%=product.id%>">
+                <a href="/products/<%=product.id%>">
                 <figure class="flex_img" class="product-box_image">
-                <img src="/img/<%=product.image%>" alt="imagen de producto">
+                <img src="/img/img-products/<%=product.image%>" alt="imagen de producto">
                 </figure>
             </div>
-            
+            <!-- agregar css -->
                 <article class="product-box_data">
                 <h2><%=toThousand (product.price)%></h2>
-                <span><%=product.discount%>%</span>
+               
+                <span><%=product.discount%>% OFF</span>
                 <p><%=product.name%></p>
                 <i class="fas fa-truck"></i>
                

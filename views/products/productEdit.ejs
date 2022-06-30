@@ -5,7 +5,7 @@
         
         <main>
             <h2 class="products-title">Estás editando: <i><%=productToEdit.id%></i></h2>
-            <form action="/products/edit/<%=productToEdit.id%>?_method=PUT" method="POST">
+            <form action="/products/<%=productToEdit.id%>?_method=PUT" method="POST">
                 <section class="productCrear">
                     <!-- ● Nombre del producto (name) -->
                     <span for="nombre">Nombre del producto</span>
@@ -15,14 +15,14 @@
                     <span for="descripcion">Descripción</span>
                     <input type="text" name="descripcion" value="<%=productToEdit.descripcion%>" placeholder="editdescripcion" required>
 
+                    <!-- ● Categoría (category) -->
+                    <span for="categoria">Categoría</span>
+                    <input type="text" name="category" value="<%=productToEdit.category%>" placeholder="Gafas de sol" required>
+                    
                     <!-- ● Imagen (image) -->                    
                     <span for="image">Imagen</span>
                     <input type="file" name="image" value="<%=productToEdit.image%>" placeholder="/Lentes32.jpg" required>
                     
-                    <!-- ● Categoría (category) -->
-                    <span for="categoria">Categoría</span>
-                    <input type="text" name="category" value="<%=productToEdit.category%>" placeholder="Gafas de sol" required>
-
                     <!-- ● Colores (o cualquier otro campo similar como: tamaños, talles, etc) -->
                     <span for="colores">Colores</span>
                     <input type="radio" name="colors" value="<%=productToEdit.colors%>" placeholder="azul" required>
@@ -31,11 +31,23 @@
                     <span for="precio">Precio</span>
                     <input type="text" name="price" value="<%=productToEdit.colors%>" placeholder="99999" required>
 
+                    <!-- ● descuento (discount)  -->
+                    <span for="descuento">Descuento</span>
+                    <input type="number" name="discount" value="<%=productToEdit.discount%>" placeholder="8888" required>  
+                    
+                    <!-- ● referencia (reference)  -->
+                    <span for="referencia">Referencia</span>
+                    <input type="text" name="reference" value="<%=productToEdit.reference%>" placeholder="583-73-0511" required> 
+
+                    <!-- ● descripcion Completa (descripcionfull)  -->
+                    <span for="Completa">descripcion Completa</span>
+                    <input type="text" name="descripcionfull" value="<%=productToEdit.descripcionfull%>" placeholder="full texto" required> 
+
                     <!-- BOTONES EDITAR Y CANCELAR -->
                     <section class="botonlogin">
                     <input class="botonedit" type="submit" name="EDITAR" value="EDITAR" placeholder="">
                     </form>
-                    <form action="/products/delete/<%=productToEdit.id%>?_method=DELETE" method="POST" >
+                    <form action="/products/<%=productToEdit.id%>?_method=DELETE" method="POST" >
                         <input class="botonedit" type="submit" name="ELIMINAR" value="ELIMINAR" placeholder="">
                     </form>
                    
