@@ -11,7 +11,9 @@ const controller = {
 
     product: function(req,res){
         res.render('products/product', { products, toThousand }
+        
         );
+       // console.log(products)
     },
     create: function(req,res){
       				res.render('products/productCreate');
@@ -23,20 +25,26 @@ const controller = {
 
 		let name        = req.body.name;
 		let descripcion = req.body.descripcion;
-		let image       = req.body.image;
 		let category    = req.body.category;
+        let image       = req.body.image;
 		let color       = req.body.colors;
         let price       = req.body.price;
-		
+		let discount    = req.body.discount;
+        let reference    = req.body.reference;
+        let descripcionfull    = req.body.descripcionfull;
+
         let newProduct = {
 
 			id: id,
             name: name,
             descripcion:descripcion,
-			image:image,
-            category: category,
+			category: category,
+            image:image,
             color:color,
 			price: price,
+            discount:discount,
+            reference:reference,
+            descripcionfull:descripcionfull,
 					
 		         		};
 
@@ -82,20 +90,28 @@ update: (req, res) => {
     let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
     const id     = +req.params.id;
 
-    let name        = req.body.name;
-    let price       = req.body.price;
-    let discount    = req.body.discount;
-    let category    = req.body.category;
-    let description = req.body.description;
+        let name        = req.body.name;
+		let descripcion = req.body.descripcion;
+		let category    = req.body.category;
+        let image       = req.body.image;
+		let color       = req.body.colors;
+        let price       = req.body.price;
+		let discount    = req.body.discount;
+        let reference    = req.body.reference;
+        let descripcionfull    = req.body.descripcionfull;
 
     let editProduct = {
 
-        id: id,
-        name: name,
-        price: price,
-        discount: discount,
-        category: category,
-        description: description
+            id: id,
+            name: name,
+            descripcion:descripcion,
+			category: category,
+            image:image,
+            color:color,
+			price: price,
+            discount:discount,
+            reference:reference,
+            descripcionfull:descripcionfull,
 
     };	
 

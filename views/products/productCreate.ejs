@@ -15,28 +15,38 @@
                     <span for="descripcion">Descripción</span>
                     <input type="text" name="descripcion" value="" placeholder="pruebadescripcion" required>
 
+                    <!-- ● Categoría (category) -->
+                    <span for="categoria">Categoría</span>
+                    <input type="text" name="category" value="" placeholder="deportivos" required>
+                    
                     <!-- ● Imagen (image) -->
                     <span for="imgProduct">Imagen</span>
                     <input type="file" name="image" value="" placeholder="/Lentes32.jpg" required>
 
-                    <!-- ● Categoría (category) -->
-                    <span for="categoria">Categoría</span>
-                    <input type="text" name="category" value="" placeholder="deportivos" required>
-
                     <!-- ● Colores (o cualquier otro campo similar como: tamaños, talles, etc) -->
                     <span for="colores">Colores</span>
                     <input type="checkbox" name="colors" value="azul" placeholder="azul" id="colores">
-                    
-
-            
+                                
                     <!-- ● Precio (price)  -->
                     <span for="precio">Precio</span>
-                    <input type="text" name="price" value="" placeholder="9999" required>
-                      
+                    <input type="number" name="price" value="" placeholder="9999" required>
+                    
+                    <!-- ● descuento (discount)  -->
+                    <span for="descuento">Descuento</span>
+                    <input type="number" name="discount" value="" placeholder="8888" required>  
+                    
+                    <!-- ● referencia (reference)  -->
+                    <span for="referencia">Referencia</span>
+                    <input type="text" name="reference" value="" placeholder="583-73-0511" required> 
+
+                    <!-- ● descripcion Completa (descripcionfull)  -->
+                    <span for="Completa">descripcion Completa</span>
+                    <input type="text" name="descripcionfull" value="" placeholder="full texto" required> 
+
                     <!-- BOTONES CREAR Y CANCELAR -->
                         <section class="botonlogin">
                             <input class="botonedit" type="submit" name="CREAR" value="CREAR" placeholder="">
-                            <input class="botonedit" type="submit" name="CANCELAR" value="CANCELAR" placeholder="">
+                            <input class="botonedit" type="reset" name="CANCELAR" value="CANCELAR" placeholder="">
                         </section>
                     </section>
               
