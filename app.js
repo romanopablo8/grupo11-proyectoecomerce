@@ -6,6 +6,10 @@ const methodOverride =  require('method-override');
 const index = require('./routes/index');
 const user = require('./routes/users');
 const product = require('./routes/product');
+const session = require('express-session')
+const cookieParser = require('cookie-parser');
+const bcrypt = require('bcryptjs');
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
