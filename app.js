@@ -22,3 +22,9 @@ app.listen(3000, ()=>{
 app.use('/', index);
 app.use('/', user);
 app.use('/', product);
+
+app.use((err, req, res, next) => {
+  
+  res.status(err.status || 404);
+  res.render('not-found');
+});

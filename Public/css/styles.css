@@ -61,6 +61,10 @@ section.banner img{
     box-sizing: border-box ;
     width: 100%;
 }
+.banner_img{height: 350px;
+
+}
+
 .banner{display: none;
 } 
 .form{display:none}   
