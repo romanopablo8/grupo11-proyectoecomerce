@@ -8,8 +8,18 @@
                 <section class="mainLogin">
                     <section class="titleLogin">
                         Sign-up / Login
-                    </section>
-                        <form action="#">
+                    </section>                    
+                        <& if (typeof errors != 'undefined'){ &>
+                            <p style="color:red">ERROR</p>
+                            <ul>
+                                <& for (let i = 0; i < errors.length; i++) &>
+                                <li>
+                                    <&= errors[i].msg &>
+                                </li>
+                                <& } &>
+                            </ul>
+                        <& } &>
+                        <form action="/users/login" method="POST" >
                             <section class="login">
                                 <p class="inputText">
                                     <input type="text" name="usuario" placeholder="Ingresa tu nombre de usuari@" required>

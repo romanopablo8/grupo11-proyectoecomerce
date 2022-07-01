@@ -7,7 +7,17 @@
         <main class="registerBody">
             <div class="conteiner-register">
                 <div class="titulo-register">Registrate</div>
-                <form action="#">
+                <& if (typeof errors != 'undefined'){ &>
+                    <p style="color:red">ERROR</p>
+                    <ul>
+                        <& for (let i = 0; i < errors.length; i++) &>
+                        <li>
+                            <&= errors[i].msg &>
+                        </li>
+                        <& } &>
+                    </ul>
+                <& } &>
+                <form action="#" enctype="multipart/form-data">
                     <div class="userdetalle-register">
                     <div class="input-register">
                         <span class="detalle-rigister">Nombre y Apellido</span>
@@ -24,6 +34,10 @@
                     <div class="input-register">
                         <span class="detalle-rigister">Teléfono</span>
                         <input  type="text" name="telefono" placeholder="Ingresa tu teléfono" required>
+                    </div>
+                    <div class="input-register">
+                        <span class="detalle-rigister">Teléfono</span>
+                        <input  type="file" name="avatar" placeholder="">
                     </div>
                     <div class="input-register">
                         <span class="detalle-rigister">Contraseña</span>
