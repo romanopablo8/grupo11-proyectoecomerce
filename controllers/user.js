@@ -15,7 +15,26 @@ const controller = {
     register: function(req,res){
         res.render('users/register');
     },
-    
-}
+    processlogin: function(req,res){
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            let usersJSON = fs.readFileSync('users.json', {encoding: 'utf-8'})
+            let users;
+            if(usersJSON == "" ){
+                users= []
+            }else {
+                users = JSON.parse(usersJSON)
+            }
 
+            for(let i = 0; i < users.length; i++){
+                if (users[i].email == req.body.email){
+                    if(bcrypt.compareSync(req.body.password, users[i].password)){
+                        let usuarioALogearse = users[i]
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
 module.exports = controller;
