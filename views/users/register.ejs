@@ -7,49 +7,49 @@
         <main class="registerBody">
             <div class="conteiner-register">
                 <div class="titulo-register">Registrate</div>
-                <& if (typeof errors != 'undefined'){ &>
-                    <p style="color:red">ERROR</p>
-                    <ul>
-                        <& for (let i = 0; i < errors.length; i++) &>
-                        <li>
-                            <&= errors[i].msg &>
-                        </li>
-                        <& } &>
-                    </ul>
-                <& } &>
-                <form action="#" enctype="multipart/form-data">
+
+
+
+
+
+
+                <form action="/register" method="POST" enctype="multipart/form-data">
                     <div class="userdetalle-register">
                     <div class="input-register">
-                        <span class="detalle-rigister">Nombre y Apellido</span>
-                        <input type="text" name="nombre" placeholder="Ingresa tu nobre" required>
+                        <span class="detalle-rigister">Nombre</span>
+                        <input type="text" name="firstname" placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="input-register">
+                        <span class="detalle-rigister">Apellido</span>
+                        <input type="text" name="lastname" placeholder="Ingresa tu apellido" required>
                     </div>
                     <div class="input-register">
                         <span class="detalle-rigister">Usuario</span>
-                        <input type="text" name="usuario" placeholder="Ingresa tu nombre de usuari@" required>
+                        <input type="text" name="user_name" placeholder="Ingresa tu nombre de usuari@" required>
                     </div>
                     <div class="input-register">
                         <span class="detalle-rigister">E-mail</span>
                         <input type="email" name="email" placeholder="Ingresa tu E-mail" required>
                     </div>
                     <div class="input-register">
-                        <span class="detalle-rigister">Teléfono</span>
-                        <input  type="text" name="telefono" placeholder="Ingresa tu teléfono" required>
+                        <span class="detalle-rigister">Categoria</span>
+                        <input  type="text" name="category" placeholder="usuario" required>
                     </div>
                     <div class="input-register">
                         <span class="detalle-rigister">Foto de perfil</span>
-                        <input  type="file" name="avatar" placeholder="">
+                        <input  type="file" name="avatar" >
                     </div>
                     <div class="input-register">
                         <span class="detalle-rigister">Contraseña</span>
-                        <input type="password" name="contraseña" placeholder="Ingresa tu contraseña" required>
+                        <input type="password" name="password" placeholder="Ingresa tu contraseña" required>
                     </div>
                     <div class="input-register">
                         <span class="detalle-rigister">Repetir contraseña</span>
-                        <input  type="password" name="contraseña" placeholder="Confirma tu contraseña" required>
+                        <input  type="password" name="password" placeholder="Confirma tu contraseña" required>
                     </div>
                     <div class="boton-register">
-                            <input type="submit" name="" value="Registrar">
-                        </div>
+                        <input type="submit" name="" value="Registrar">
+                    </div>
                
   
                 </form>
