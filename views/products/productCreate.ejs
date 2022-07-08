@@ -17,8 +17,26 @@
 
                     <!-- ● Categoría (category) -->
                     <span for="categoria">Categoría</span>
-                    <input type="text" name="category" value="" placeholder="deportivos" required>
-                    
+                    <select 
+									name="category" 
+									class="ingreso-register <%= locals.errors && errors.category ? 'is-invalid' : null %>"
+								>
+									<option value="">Elegí una categoria</option>
+									<%  
+										let categ_lentes = ['Gafas de Sol', 'Deportivas', 'Lentes', 'lentes Niños'];
+									%>
+									<% for (const oneCateg of categ_lentes) { %>
+										<option 
+											value="<%=  oneCateg %>"
+											<%= locals.oldData && (oneCateg === oldData.category) ? 'selected' : null %> 
+										> <%= oneCateg %> </option>
+									<% } %>
+								</select>
+                                <% if (locals.errors && errors.category) { %>
+									<div class="text-danger">
+										<%= errors.category.msg %>
+									</div>
+								<% } %>
                     <!-- ● Imagen (image) -->
                     <span for="imgProduct">Imagen</span>
                     <input type="file" name="image" value="" placeholder="/Lentes32.jpg" required>

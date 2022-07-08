@@ -970,5 +970,17 @@
         "discount": "10",
         "reference": "444444-333-3",
         "descripcionfull": "mmmmmmmmmmmmmmfull full full full"
+    },
+    {
+        "id": 82,
+        "name": "nuevo",
+        "descripcion": "prueba categoria",
+        "category": "lentes Niños",
+        "image": "depochild6-2.jpg",
+        "color": "azul",
+        "price": "6666",
+        "discount": "15",
+        "reference": "444444-333-3",
+        "descripcionfull": "full full full full prueba full nuevo"
     }
 ]

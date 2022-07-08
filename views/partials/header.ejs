@@ -35,7 +35,17 @@
             <li><a href="#">deportivas</a></li>
             <li><a href="#">Vender</a></li>
             <li><a href="/login">Log In <i class="fas fa-sign-in-alt"></i></a></li>
-            <li><a href="#">Ayuda</a></li>
+            <% if (locals.isLogged) { %>
+            <li><a href="#"></a>
+                <img src="/img/users/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;">
+            Hi <%= locals.userLogged.user_name %>
+            </li>
+            <% } else { %>
+                <li>
+                    <a href="#">Ayuda</a>
+                </li>
+            
+            <% } %>   
         </ul>
         </nav>
         </div>

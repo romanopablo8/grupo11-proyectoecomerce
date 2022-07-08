@@ -8,18 +8,18 @@ files to a route that you didn't anticipate. Only use this function on routes
  where you are handling the uploaded files.
 */
 
-let multerDiskStorage = multer.diskStorage ({
+let storage = multer.diskStorage ({
     destination: (req, file, callback) => {
         let folder = path.join(__dirname, '../public/img/users');
         callback(null, folder)
 } ,
     filename: (req, file, callback) => {
-        console.log(file);
         let imageName ='user-'+ Date.now() + path.extname(file.originalname);
+    //  let fileName = `user-${Date.now()}${path.extname(file.originalname)}`;
         callback(null, imageName)
 }
 })
-let fileUpload = multer({storage: multerDiskStorage});
+let  uploadFile = multer({storage});
 
 
-module.exports =  multerDiskStorage
+module.exports =  uploadFile;

@@ -19,26 +19,40 @@
                                 <& } &>
                             </ul>
                         <& } &>
-                        <form action="/users/login" method="POST" >
+                        <form action="/login" method="POST" >
                             <section class="login">
+                                <label><b>Correo electrónico:</b></label>
                                 <p class="inputText">
-                                    <input type="text" name="usuario" placeholder="Ingresa tu nombre de usuari@" required>
+                                    <input type="text" name="email" placeholder="Ingresa Correo electrónico" >
+                                    <% if (locals.errors && errors.email) { %>
+                                        <div class="text-danger">
+                                            <%= errors.email.msg %>
+                                        </div>
+                                    <% } %>                                   
                                 </p>
+                                <label><b>Password:</b></label>
                                 <p class="inputText">                                
-                                    <input type="password" name="contraseña" placeholder="Ingresa tu contraseña" required>
+                                    <input type="password" name="password" placeholder="Ingresa tu contraseña" >
+                                    <% if (locals.errors && errors.password) { %>
+                                        <div class="text-danger_falta">
+                                            <%= errors.password.msg %>
+                                        </div>
+                                    <% } %>          
                                 </p>
                                 <p class="sectionRecordarLogin">                                    
-                                    <input type="radio" class="lblRecord"name="recordarme" id="recordarme">
-                                    <label for="recordarme" class="lblRecord">Recordarme</label>
+                                   
+                                    <label for="recordarme" class="lblRecord">
+                                    <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario                                       
+                                    </label>
                                 </p>
                                 <p class="botonlogin">
                                     <input type="submit" name="boton1" value="Login">
                                 </p>
                                 <p class="botonlogin">
-                                    <input type="submit" name="boton1" value="Olvide Mi Contraseña">
+                                    <input type="submit" name="boton2" value="Olvide Mi Contraseña">
                                 </p>
                                 <p class="botonlogin">
-                                    <input type="submit" name="boton1" value="Registrar">
+                                    <input type="submit" name="boton3" value="Registrar">
                                 </p> 
                             </section>                           
                         </form>
