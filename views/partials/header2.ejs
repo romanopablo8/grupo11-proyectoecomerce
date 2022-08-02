@@ -1,0 +1,51 @@
+<header>
+    <nav class="navbar navbar-expand-lg   " style="background: linear-gradient(135deg, #2F8F9D, #82DBD8)";>
+        <div class="container">
+          <a class="navbar-brand" href="#">GUARDO Store</a>
+        
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+         
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link" href="/">Gafas de Sol</a></li>
+              <li class="nav-item"><a class="nav-link" href="/">Deportivas</a></li>
+              <li class="nav-item"><a class="nav-link" href="/">lentes</a></li>
+              <li class="nav-item"><a class="nav-link" href="/">lentes Niños</a></li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success me-4"  type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav align-items-center">
+              
+              <% if (locals.isLogged) { %>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="/img/users/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;">
+                  Hi <%= locals.userLogged.user_name %>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/profile">My profile</a>
+                  <li><hr class="dropdown-divider"></li>
+                  <a class="dropdown-item" href="/logout">Logout</a>
+                </ul>
+              </li> 
+              <ul class="navbar-nav "> <a href= '/productcart'> <i class="fa-solid fa-basket-shopping" style="font-size:25px ; color: black"> </i></a></ul>
+              
+              <% } else { %>
+              <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+              <li class="nav-item"><a class="nav-link" href="/login">Login<i class="fas fa-sign-in-alt"></i></a></li>
+              
+            
+            <% } %>   
+            
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <script src="/js/bootstrap.bundle.js" ></script>
+</header>

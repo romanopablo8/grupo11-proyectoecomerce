@@ -1,65 +1,60 @@
-
 <%- include('../partials/head') -%>
     <body>
        
-        <%- include('../partials/header') -%>
-                
-            <main>
-                <section class="mainLogin">
-                    <section class="titleLogin">
-                        Sign-up / Login
-                    </section>                    
-                        <& if (typeof errors != 'undefined'){ &>
-                            <p style="color:red">ERROR</p>
-                            <ul>
-                                <& for (let i = 0; i < errors.length; i++) &>
-                                <li>
-                                    <&= errors[i].msg &>
-                                </li>
-                                <& } &>
-                            </ul>
-                        <& } &>
-                        <form action="/login" method="POST" >
-                            <section class="login">
-                                <label><b>Correo electrónico:</b></label>
-                                <p class="inputText">
-                                    <input type="text" name="email" placeholder="Ingresa Correo electrónico" >
-                                    <% if (locals.errors && errors.email) { %>
-                                        <div class="text-danger">
-                                            <%= errors.email.msg %>
-                                        </div>
-                                    <% } %>                                   
-                                </p>
-                                <label><b>Password:</b></label>
-                                <p class="inputText">                                
-                                    <input type="password" name="password" placeholder="Ingresa tu contraseña" >
-                                    <% if (locals.errors && errors.password) { %>
-                                        <div class="text-danger_falta">
-                                            <%= errors.password.msg %>
-                                        </div>
-                                    <% } %>          
-                                </p>
-                                <p class="sectionRecordarLogin">                                    
-                                   
-                                    <label for="recordarme" class="lblRecord">
-                                    <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario                                       
-                                    </label>
-                                </p>
-                                <p class="botonlogin">
-                                    <input type="submit" name="boton1" value="Login">
-                                </p>
-                                <p class="botonlogin">
-                                    <input type="submit" name="boton2" value="Olvide Mi Contraseña">
-                                </p>
-                                <p class="botonlogin">
-                                    <input type="submit" name="boton3" value="Registrar">
-                                </p> 
-                            </section>                           
-                        </form>
-                    
-                </section>
-          
-            </main>
+        <%- include('../partials/header2') -%>
+        	<!-- Login-Form -->
+	<div class="container my-5 rounded-4  bg-light">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<h2> Sign-up / Login</h2>
+	
+				<form method="POST" action="/login">
+					<div class="row">
+						<div class="col-md-6 my-2">
+							<div class="form-group">
+								<label><b>Correo electrónico:</b></label>
+								<input type="text" name="email" placeholder="Ingresa Correo electrónico" class="form-control">
+								<% if (locals.errors && errors.email) { %>
+									<div class="text-danger">
+										<%= errors.email.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div>
+						<div class="col-md-6 my-2">
+							<div class="form-group">
+								<label><b>Password:</b></label>
+								<input type="password" name="password" class="form-control">
+								<div class="invalid-feedback">
+								</div>
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="text-danger_falta">
+                                        <%= errors.password.msg %>
+                                    </div>
+                                <% } %> 
+							</div>
+						</div>
+						<div class="col-md-6 my-2">
+							<div class="form-group form-check">
+								<label class="form-check-label">
+									<input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+								</label>
+							</div>
+						</div>
+						<div class="col-12 my-3 boton-register">
+                             <input type="submit" name="boton1" value="Login">
+                        </div>	
+                        <div class="col-12 my-3 boton-register">  
+                             <input type="submit" name="boton2" value="Olvide Mi Contraseña">
+                        </div>
+                        
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //Login-Form -->     
+         
             <%- include('../partials/footer') -%>
     </body>
 </html>
