@@ -6,9 +6,9 @@ const controller = require( '../controllers/products' );
 /* GET products cart / details page. */
 router.get( '/products', controller.product);
 router.get( '/productcart', controller.productcart);
-router.get( '/productdetail', controller.productdetail);
+/* router.get( '/productdetail', controller.productdetail);
 router.get( '/productcreate', controller.productcreate);
-router.get( '/productedit', controller.productedit);
+router.get( '/productedit', controller.productedit); */
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/products/create', controller.create); 

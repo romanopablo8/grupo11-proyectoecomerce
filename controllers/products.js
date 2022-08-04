@@ -154,7 +154,7 @@ update: (req, res) => {
         );
     },
     
-    productdetail: function(req,res){
+ /*    productdetail: function(req,res){
         res.render('products/productDetail');
     },
 
@@ -164,7 +164,7 @@ update: (req, res) => {
 
     productedit:  function(req,res){
         res.render('products/productEdit');
-    }
+    } */
 }
 
 module.exports = controller;
