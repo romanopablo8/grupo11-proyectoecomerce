@@ -1,67 +1,244 @@
 <%- include('../partials/head') -%>
+<link href="/css/form-validation.css" rel="stylesheet">
     <body>
         
         <%- include('../partials/header2') -%>
-        
+        <!-- Create-Form -->
+<div class="container container1 my-5  rounded-4  bg-light">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2>Agregar Producto</h2>
+            <%  
+             let type = "img-products";
+            %>
+            
+            <form method="POST" action="/products/create" >
+                <div class="row">
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <!-- ● Nombre del producto (name) -->
+                            <label><b>Nombre del producto:</b></label>
+                            <input 
+                                type="text" 
+                                name="name"
+                                placeholder="Ingresa el nombre" 
+                                
+                                class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.name : null %>">
+                                <% if (locals.errors && errors.name) { %>
+                                    <div class="text-danger">
+                                        <%= errors.name.msg %> 
+                                    </div>
+                                <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Descripción:</b></label>
+                            <input 
+                                type="text" 
+                                name="descripcion"
+                                placeholder="Ingresa la descripcion" 
+                                class="form-control <%= locals.errors && errors.descripcion ? 'is-invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.descripcion : null %>">
+                                <% if (locals.errors && errors.descripcion) { %>
+                                    <div class="text-danger">
+                                        <%= errors.descripcion.msg %> 
+                                    </div>
+                                <% } %>            
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Categoría</b></label>
+                            <select 
+                            name="category" 
+                            class="form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>"
+                        >
+                            <option value="">Elegí una categoria</option>
+                            <%  
+                                let categ_lentes = ['Gafas de Sol', 'Deportivas', 'Lentes', 'lentes Niños'];
+                            %>
+                            <% for (const oneCateg of categ_lentes) { %>
+                                <option 
+                                    value="<%=  oneCateg %>"
+                                    <%= locals.oldData && (oneCateg === oldData.category) ? 'selected' : null %> 
+                                > <%= oneCateg %> </option>
+                            <% } %>
+                        </select>
+                        <% if (locals.errors && errors.category) { %>
+                            <div class="text-danger">
+                                <%= errors.category.msg %>
+                            </div>
+                        <% } %>
+                                
+                        </div>
+                    </div> 
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Imagen del producto:</b></label>
+                            <input 
+                                type="file" 
+                                name="image"
+                                class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.image) { %>
+                                <div class="text-danger">
+                                    <%= errors.image.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>                                                  
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Color:</b></label>
+                            <select 
+                                name="colors" 
+                                class="form-select <%= locals.errors && errors.colors ? 'is-invalid' : null %>">
+                                <option value="">Elegí un Color</option>
+                                <%  
+                                let colorprod = ['black','white','red','green','yellow','orange'];
+                            %>
+                            <% for (const onecolorprod of colorprod) { %>
+                                    <option 
+                                        value="<%= onecolorprod %>"
+                                        <%= locals.oldData && (onecolorprod === oldData.colors) ? 'selected' : null %> 
+                                    > <%= onecolorprod %> </option>
+                                <% } %>
+                            </select>
+                            <% if (locals.errors && errors.colors) { %>
+                                <div class="text-danger">
+                                    <%= errors.colors.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Precio</b></label>
+                            <input 
+                                type="number" 
+                                name="price" 
+                                placeholder="Ingresa el precio" 
+                                class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.price : null %>"
+                            >
+                            <% if (locals.errors && errors.price) { %>
+                                <div class="text-danger">
+                                    <%= errors.price.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Descuento</b></label>
+                            <input 
+                                type="number" 
+                                name="discount" 
+                                placeholder="Ingresa el descuento" 
+                                class="form-control <%= locals.errors && errors.discount ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.discount : null %>"
+                            >
+                            <% if (locals.errors && errors.discount) { %>
+                                <div class="text-danger">
+                                    <%= errors.discount.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Referencia</b></label>
+                            <input 
+                                type="text" 
+                                name="reference" 
+                                placeholder="583-73-0511" 
+                                class="form-control <%= locals.errors && errors.reference ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.reference : null %>"
+                            >
+                            <% if (locals.errors && errors.reference) { %>
+                                <div class="text-danger">
+                                    <%= errors.reference.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>descripcion Completa</b></label>
+                            <input 
+                                type="text" 
+                                name="descripcionfull" 
+                                placeholder="full texto"
+                                class="form-control <%= locals.errors && errors.descripcionfull ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.descripcionfull) { %>
+                                <div class="text-danger">
+                                    <%= errors.descripcionfull.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                   
+
+                    <div class="col-12 my-3 boton-register">
+                    <!-- BOTONES CREAR  -->
+                    <input  type="submit" name="CREAR" value="CREAR" placeholder="">
+                    </div>
+                    <div class="col-12 my-3 boton-register">
+                    <!-- BOTONES CANCELAR -->
+                    <input  type="reset" name="CANCELAR" value="CANCELAR" placeholder="">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- //Create-Form 
         <main>
             
             <form action="/products/create" method="POST" >
                 <section class="productCrear">
-                    <!-- ● Nombre del producto (name) -->
+                 
                     <span for="nombre">Nombre del producto</span>
                     <input class="ingreso-register" type="text" name="name" value="" placeholder="Oakley" required>
 
-                    <!-- ● Descripción (description) -->
+                  
                     <span for="descripcion">Descripción</span>
                     <input type="text" name="descripcion" value="" placeholder="pruebadescripcion" required>
 
-                    <!-- ● Categoría (category) -->
+                   
                     <span for="categoria">Categoría</span>
-                    <select 
-									name="category" 
-									class="ingreso-register <%= locals.errors && errors.category ? 'is-invalid' : null %>"
-								>
-									<option value="">Elegí una categoria</option>
-									<%  
-										let categ_lentes = ['Gafas de Sol', 'Deportivas', 'Lentes', 'lentes Niños'];
-									%>
-									<% for (const oneCateg of categ_lentes) { %>
-										<option 
-											value="<%=  oneCateg %>"
-											<%= locals.oldData && (oneCateg === oldData.category) ? 'selected' : null %> 
-										> <%= oneCateg %> </option>
-									<% } %>
-								</select>
-                                <% if (locals.errors && errors.category) { %>
-									<div class="text-danger">
-										<%= errors.category.msg %>
-									</div>
-								<% } %>
-                    <!-- ● Imagen (image) -->
+
+            
                     <span for="imgProduct">Imagen</span>
                     <input type="file" name="image" value="" placeholder="/Lentes32.jpg" required>
 
-                    <!-- ● Colores (o cualquier otro campo similar como: tamaños, talles, etc) -->
+                   
                     <span for="colores">Colores</span>
-                    <input type="checkbox" name="colors" value="azul" placeholder="azul" id="colores">
-                                
-                    <!-- ● Precio (price)  -->
+                    
+                    <select name="color">
+                        <option value="#FFF">Claro</option>
+                        <option value="#262626">Oscuro</option>
+                    </select>           
+                
                     <span for="precio">Precio</span>
                     <input type="number" name="price" value="" placeholder="9999" required>
                     
-                    <!-- ● descuento (discount)  -->
+                  
                     <span for="descuento">Descuento</span>
                     <input type="number" name="discount" value="" placeholder="8888" required>  
                     
-                    <!-- ● referencia (reference)  -->
+                    
                     <span for="referencia">Referencia</span>
                     <input type="text" name="reference" value="" placeholder="583-73-0511" required> 
 
-                    <!-- ● descripcion Completa (descripcionfull)  -->
+                  
                     <span for="Completa">descripcion Completa</span>
                     <input type="text" name="descripcionfull" value="" placeholder="full texto" required> 
 
-                    <!-- BOTONES CREAR Y CANCELAR -->
+                   
                         <section class="botonlogin">
                             <input class="botonedit" type="submit" name="CREAR" value="CREAR" placeholder="">
                             <input class="botonedit" type="reset" name="CANCELAR" value="CANCELAR" placeholder="">
@@ -71,6 +248,6 @@
             </form>
 
         </main>
-
+--> 
         <%- include('../partials/footer') -%>
     </body>
