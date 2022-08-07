@@ -9,7 +9,11 @@ const product = require('./routes/product');
 const session = require('express-session')
 const cookieParser = require('cookie-parser');
 //const bcrypt = require('bcryptjs');
+
+//middleware
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
