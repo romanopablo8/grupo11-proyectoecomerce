@@ -163,7 +163,7 @@ article.flex_article  {
     border: none;
     outline: none;
     color: white;
-    font-size: 12px;
+    font-size: 18px;
     width: 80%;
     height: 40px;
     margin: auto;
@@ -509,7 +509,7 @@ section.btn{
 .bton-buy input{
     background: linear-gradient(135deg, #8ac7f0, #bb83d1);
     border-radius: 5px;
-    font-size: 2%;
+    font-size: 2%x;
     border: none;
     outline: none;
     color: white;
@@ -665,7 +665,7 @@ section.btn{
         padding-right: 1%;
     }
     .flex_buy{
-        padding-top: 50%;
+        padding-top: 3px 0px;
     }
     section.descripcionLarge{
         flex-direction: row;

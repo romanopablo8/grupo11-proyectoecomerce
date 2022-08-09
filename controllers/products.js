@@ -151,9 +151,8 @@ update: (req, res) => {
 
     productcart: function(req,res){
         res.render('products/productCart', { products, toThousand }
-        );
+        )
     },
-    
  /*    productdetail: function(req,res){
         res.render('products/productDetail');
     },
@@ -165,9 +164,10 @@ update: (req, res) => {
     productedit:  function(req,res){
         res.render('products/productEdit');
     } */
-}
+    
+  }
 
-module.exports = controller;
+   module.exports = controller;
 
 
 /* 1. /products (GET)

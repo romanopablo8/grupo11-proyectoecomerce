@@ -10,6 +10,7 @@ router.get( '/productcart', controller.productcart);
 router.get( '/productcreate', controller.productcreate);
 router.get( '/productedit', controller.productedit); */
 
+
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/products/create', controller.create); 
 router.post('/products/create', controller.store); 
