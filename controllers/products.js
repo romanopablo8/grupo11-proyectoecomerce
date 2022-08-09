@@ -165,6 +165,10 @@ update: (req, res) => {
         res.render('products/productEdit');
     } */
     
+    lentes: function (req, res ) {
+        res.render ('/products/lentes');
+     },
+
   }
 
    module.exports = controller;
