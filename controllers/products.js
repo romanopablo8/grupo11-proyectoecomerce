@@ -166,7 +166,7 @@ update: (req, res) => {
     } */
     
     lentes: function (req, res ) {
-        res.render ('/products/lentes');
+        res.render ('products/lentes');
      },
 
   }
