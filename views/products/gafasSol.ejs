@@ -3,11 +3,37 @@
      
     <%- include('../partials/header2') -%>
 
-<main class="conteiner-products">
+           <main class="conteiner-products">
 
-</main>
+            <section class="flex-offers">
+            <% gafasSol.forEach( function ( product){ %>
+                <article class="flex_article">
+                     
+                     <div >
+                        <a href="/products/<%=product.id%>">
+                        <figure class="flex_img" class="product-box_image">
+                        <img src="/img/img-products/<%=product.image%>" alt="imagen de producto">
+                        </figure>
+                    </div>
+                    <!-- agregar css -->
+                        <article class="product-box_data">
+                        <h2><%=toThousand (product.price)%></h2>
+                       
+                        <span><%=product.discount%>% OFF</span>
+                        <p><%=product.name%></p>
+                        <i class="fas fa-truck"></i>
+                       
+                    
+                        </a>
+                        </article>
+               
+                </article>
+                <% })%>
+            </section>
+        </main>
+ 
+        <%- include('../partials/footer') -%>
+   
+   </body>
 
-<h1>PROBANDO</h1>
-<footer>
-
-</footer>
+</html>

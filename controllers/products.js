@@ -176,14 +176,25 @@ update: (req, res) => {
      },
     
      deportivos: function (req, res ) {
-        res.render('products/deportivos' );
+        const deportivos = products.filter( function( product ) {
+        return product.category === 'Deportivas';
+        });
+        res.render('products/deportivos', { deportivos, toThousand }  );
      },
-
+     
 
      gafasSol: function (req, res ) {
-        res.render('products/gafasSol' );
+        const gafasSol = products.filter( function( product ) {
+        return product.category === 'Gafas de Sol';
+        });
+        res.render('products/gafasSol' , {gafasSol, toThousand } );
      },
-
+     lenteschicos: function (req, res ) {
+        const lenteschicos = products.filter( function( product ) {
+        return product.category === 'lentes Niños';
+        });
+        res.render('products/lenteschicos', { lenteschicos, toThousand }  );
+     }
   }
 
    module.exports = controller;
