@@ -166,7 +166,13 @@ update: (req, res) => {
     } */
     
     lentes: function (req, res ) {
-        res.render ('products/lentes');
+        
+        const lentes = products.filter( function( product ) {
+
+			return product.category === 'Lentes';
+
+		});
+        res.render('products/lentes', { lentes, toThousand } );
      },
 
   }
