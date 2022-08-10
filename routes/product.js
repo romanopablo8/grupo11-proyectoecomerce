@@ -7,6 +7,8 @@ const controller = require( '../controllers/products' );
 router.get( '/products', controller.product);
 router.get( '/productcart', controller.productcart);
 router.get( '/products/lentes', controller.lentes);
+router.get( '/products/deportivos', controller.deportivos);
+router.get( '/products/gafasSol', controller.gafasSol);
 /* router.get( '/productdetail', controller.productdetail);
 router.get( '/productcreate', controller.productcreate);
 router.get( '/productedit', controller.productedit); */

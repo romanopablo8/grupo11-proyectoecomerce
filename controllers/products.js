@@ -174,6 +174,15 @@ update: (req, res) => {
 		});
         res.render('products/lentes', { lentes, toThousand } );
      },
+    
+     deportivos: function (req, res ) {
+        res.render('products/deportivos' );
+     },
+
+
+     gafasSol: function (req, res ) {
+        res.render('products/gafasSol' );
+     },
 
   }
 
