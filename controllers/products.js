@@ -4,6 +4,8 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const {	validationResult} = require('express-validator');
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
@@ -20,6 +22,17 @@ const controller = {
                      
 	},
     store: function(req,res){
+		//Validacion de products
+        
+        const resultValidationp = validationResult(req);
+
+		if (resultValidationp.errors.length > 0) {
+			return res.render('products/productCreate', {
+				errors: resultValidationp.mapped(),
+				oldData: req.body
+			});
+		}
+
         let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
 		const id     = products.length + 1;
 

@@ -167,12 +167,14 @@
                     <div class="col-md-12 my-1">
                         <div class="form-group">
                             <label><b>descripcion Completa</b></label>
-                            <input 
-                                type="text" 
+                            <textarea 
+                                
+                                
+                                rows="10" cols="30"
                                 name="descripcionfull" 
                                 placeholder="full texto"
                                 class="form-control <%= locals.errors && errors.descripcionfull ? 'is-invalid' : null %>"
-                            >
+                            ></textarea>
                             <% if (locals.errors && errors.descripcionfull) { %>
                                 <div class="text-danger">
                                     <%= errors.descripcionfull.msg %>

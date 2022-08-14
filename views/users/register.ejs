@@ -1,4 +1,15 @@
 <%- include('../partials/head') -%>
+<!-- validar contraseña display -->
+<style type="text/css">
+    .ocultar {
+        display: none;
+    }
+
+    .mostrar {
+        display: block;
+    }
+</style>
+
     <body>
          
     <%- include('../partials/header2') -%>
@@ -8,8 +19,8 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <h2>Formulario de registro</h2>
-            
-            <form method="POST" action="/register" enctype="multipart/form-data">
+            <!--onsubmit="verificarPasswords(); return false"-->
+            <form method="POST" action="/register" enctype="multipart/form-data" </form>>
                 
                 <div class="row">
                     <div class="col-md-6 my-1">
@@ -122,6 +133,7 @@
                             <input 
                                 type="password" 
                                 name="password1"
+                                id="password1"
                                 placeholder="Ingresa tu contraseña" 
                                 class="form-control"
                                 required> 
@@ -133,6 +145,7 @@
                             <input 
                                 type="password" 
                                 name="password" 
+                                id="password"
                                 class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                             >
                             <% if (locals.errors && errors.password) { %>
@@ -141,6 +154,14 @@
                                 </div>
                             <% } %>
                         </div>
+        <!-- Mensajes de Verificación -->
+        <div id="error" class="alert alert-danger ocultar" role="alert">
+            Las Contraseñas no coinciden, vuelve a intentar !
+        </div>
+        <div id="ok" class="alert alert-success ocultar" role="alert">
+            Las Contraseñas coinciden ! (Procesando formulario ... )
+        </div>
+        <!-- Fin Mensajes de Verificación -->
                     </div>
                    
 
@@ -157,5 +178,8 @@
 <!-- //Register-Form -->
 
     <%- include('../partials/footer') -%>
+
+    <script src="/js/validar.js"></script>
+
     </body>
 </html>

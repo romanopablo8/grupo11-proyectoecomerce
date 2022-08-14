@@ -1,6 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
+const validations = require('../middlewares/validateCreateMiddleware');
+
 const controller = require( '../controllers/products' );
 
 /* GET products cart / details page. */
@@ -17,7 +19,7 @@ router.get( '/productedit', controller.productedit); */
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/products/create', controller.create); 
-router.post('/products/create', controller.store); 
+router.post('/products/create',validations, controller.store); 
 /*** GET ONE PRODUCT ***/ 
 router.get('/products/:id', controller.detail); 
 /*** EDIT ONE PRODUCT ***/ 
