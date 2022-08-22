@@ -2,12 +2,16 @@ const path = require('path');
 const { body } = require('express-validator');
 
 module.exports = [
-	body('name').notEmpty().withMessage('Tienes que escribir un nombre'),
-    body('descripcion').notEmpty().withMessage('Tienes que escribir una descripcion'), 
+	body('name').notEmpty().withMessage('Tienes que escribir un nombre').bail()
+	.isLength( { min: 5 }).withMessage('Tienes que completar el nombre'),
+
+    body('descripcion').notEmpty().withMessage('Tienes que escribir una descripcion').bail()
+	.isLength( { min: 20 }).withMessage('minimo 20 caracteres'),
+
     body('category').notEmpty().withMessage('Tienes que escribir una category'), 
 		
 	body('colors').notEmpty().withMessage('Tienes que elegir un color'),
-	body('image').custom((value, { req }) => {
+	 body('image').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];
 		
@@ -21,6 +25,6 @@ module.exports = [
 		}
 
 		return true;
-	}),
+	}), 
     body('descripcionfull').notEmpty().withMessage('Tienes que escribir la descripcion full')
 ]

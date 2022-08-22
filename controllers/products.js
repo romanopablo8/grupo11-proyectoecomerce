@@ -4,6 +4,8 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const {	validationResult} = require('express-validator');
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
@@ -20,6 +22,17 @@ const controller = {
                      
 	},
     store: function(req,res){
+		//Validacion de products
+        
+        const resultValidationp = validationResult(req);
+
+		if (resultValidationp.errors.length > 0) {
+			return res.render('products/productCreate', {
+				errors: resultValidationp.mapped(),
+				oldData: req.body
+			});
+		}
+
         let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
 		const id     = products.length + 1;
 
@@ -166,9 +179,35 @@ update: (req, res) => {
     } */
     
     lentes: function (req, res ) {
-        res.render ('/products/lentes');
-     },
+        
+        const lentes = products.filter( function( product ) {
 
+			return product.category === 'Lentes';
+
+		});
+        res.render('products/lentes', { lentes, toThousand } );
+     },
+    
+     deportivos: function (req, res ) {
+        const deportivos = products.filter( function( product ) {
+        return product.category === 'Deportivas';
+        });
+        res.render('products/deportivos', { deportivos, toThousand }  );
+     },
+     
+
+     gafasSol: function (req, res ) {
+        const gafasSol = products.filter( function( product ) {
+        return product.category === 'Gafas de Sol';
+        });
+        res.render('products/gafasSol' , {gafasSol, toThousand } );
+     },
+     lenteschicos: function (req, res ) {
+        const lenteschicos = products.filter( function( product ) {
+        return product.category === 'lentes Niños';
+        });
+        res.render('products/lenteschicos', { lenteschicos, toThousand }  );
+     }
   }
 
    module.exports = controller;

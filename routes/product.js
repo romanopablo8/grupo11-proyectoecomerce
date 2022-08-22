@@ -1,12 +1,17 @@
 const express = require('express');
 const router  = express.Router();
 
+const validations = require('../middlewares/validateCreateMiddleware');
+
 const controller = require( '../controllers/products' );
 
 /* GET products cart / details page. */
 router.get( '/products', controller.product);
 router.get( '/productcart', controller.productcart);
 router.get( '/products/lentes', controller.lentes);
+router.get( '/products/deportivos', controller.deportivos);
+router.get( '/products/gafasSol', controller.gafasSol);
+router.get( '/products/lenteschicos', controller.lenteschicos);
 /* router.get( '/productdetail', controller.productdetail);
 router.get( '/productcreate', controller.productcreate);
 router.get( '/productedit', controller.productedit); */
@@ -14,7 +19,7 @@ router.get( '/productedit', controller.productedit); */
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/products/create', controller.create); 
-router.post('/products/create', controller.store); 
+router.post('/products/create',validations, controller.store); 
 /*** GET ONE PRODUCT ***/ 
 router.get('/products/:id', controller.detail); 
 /*** EDIT ONE PRODUCT ***/ 
