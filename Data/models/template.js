@@ -27,10 +27,6 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Tabla = sequelize.define(alias,cols,config);
 
-    Tabla.associate = function (models) {
-        //asociar foreignKeys aca
-        
-    }
-
+    
     return Tabla
 };
