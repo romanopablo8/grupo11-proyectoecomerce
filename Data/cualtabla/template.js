@@ -20,17 +20,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        timestamps: true,
+        freezeTableName: true,
+        timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
     }
     const Tabla = sequelize.define(alias,cols,config);
 
-    Tabla.associate = function (models) {
+ /*    Tabla.associate = function (models) {
         //asociar foreignKeys aca
         
     }
-
+ */
     return Tabla
 };

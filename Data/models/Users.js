@@ -33,14 +33,14 @@ module.exports = (sequelize, dataTypes) => {
 
     };
     let config = {
-        timestamps: true,
+        timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
     }
     const User = sequelize.define(alias,cols,config);
 
-    User.associate = function (models) {
+ /*    User.associate = function (models) {
         User.belongsTo(models.UserImage, { // models.Genre -> Genres es el valor de alias en genres.js
             as: "image",
             foreignKey: "id_userImage"
@@ -49,8 +49,19 @@ module.exports = (sequelize, dataTypes) => {
         User.belongsTo(models.userCategory, { // models.Actor -> Actors es el valor de alias en actor.js
             as: "category",
             fireignKey: 'id_userCategory',           
-        })
-    }
+        }) 
+    }*/
 
+    // force: true will drop the table if it already exists
+User.sync({force: true}).then(() => {
+    // Table created
+    return User.create({
+        first_name: 'John',
+        last_name: 'Hancock',
+        email: 'john@hancock.com',
+        password:123456,
+        
+    });
+  });
     return User
 };

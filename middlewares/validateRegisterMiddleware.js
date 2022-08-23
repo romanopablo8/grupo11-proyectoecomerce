@@ -31,6 +31,15 @@ module.exports = [
 
 		return true;
 	}),
-    body('password').notEmpty().withMessage('Tienes que escribir una contraseña').bail()
+    body('password1').notEmpty().withMessage('Tienes que escribir una contraseña').bail()
 	.isLength( { min: 8 }).withMessage('minimo 8 caracteres'),
+	body('password').custom((value, { req }) => {
+		if (value !== req.body.password1) {
+		  throw new Error('Password y Repetir password no coinciden');
+		}
+	
+		// Indicates the success of this synchronous custom validator
+		return true;
+	  }),
+	 
 ]

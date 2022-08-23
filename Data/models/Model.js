@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Model'; 
+    let alias = 'model'; 
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -13,14 +13,15 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        timestamps: true,
+        freezeTableName: true,
+        timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
     }
     const Model = sequelize.define(alias,cols,config);
 
-    User.associate = function (models) {
+/*     User.associate = function (models) {
         User.belongsTo(models.UserImage, { // models.Genre -> Genres es el valor de alias en genres.js
             as: "image",
             foreignKey: "id_userImage"
@@ -30,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "category",
             fireignKey: 'id_userCategory',           
         })
-    }
+    } */
 
     return Model
 };

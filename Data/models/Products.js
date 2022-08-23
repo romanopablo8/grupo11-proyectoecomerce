@@ -39,24 +39,25 @@ module.exports = (sequelize, dataTypes) => {
 
     };
     let config = {
-        timestamps: true,
+        timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
     }
     const Product = sequelize.define(alias,cols,config);
+    
 
-    User.associate = function (models) {
-        User.belongsTo(models.UserImage, { // models.Genre -> Genres es el valor de alias en genres.js
-            as: "image",
+   /*  Product.associate = function (models) {
+        Product.belongsTo(models.UserImage, { // models.Genre -> Genres es el valor de alias en genres.js
+            as: "images",// El nombre del modelo pero en plural
             foreignKey: "id_userImage"
         })
 
-        User.belongsTo(models.userCategory, { // models.Actor -> Actors es el valor de alias en actor.js
-            as: "category",
+        Product.belongsTo(models.userCategory, { // models.Actor -> Actors es el valor de alias en actor.js
+            as: "categorys",
             fireignKey: 'id_userCategory',           
         })
     }
-
+ */
     return Product
 };

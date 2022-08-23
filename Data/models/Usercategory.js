@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Usercategory'; 
+    let alias = 'userCategory'; 
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -14,19 +14,20 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        timestamps: true,
+        freezeTableName: true,
+        timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
     }
     const Usercategory = sequelize.define(alias,cols,config);
 
-    Category.associate = function (models) {
+  /*   Category.associate = function (models) {
         Category.belongsToMany(models.Users, { 
             as: "image",
             foreignKey: "id_userImage"
         })
-    }
+    } */
     return Usercategory
 
 };

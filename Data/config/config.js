@@ -1,8 +1,20 @@
+
 module.exports = {
+  "development": {
+  host: "localhost",
+  username: "root",
+  password: "",
+  database: "ecomerce_db",
+  dialect: "mysql",
+},
+};
+
+
+/* module.exports = {
     "development": {
       "username": "root",
       "password": '',
-      "database": "proyecto",
+      "database": "ecomerce_db",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
@@ -22,3 +34,4 @@ module.exports = {
     }
   }
   
+   */
