@@ -33,6 +33,18 @@ module.exports = [
 	}),
     body('password1').notEmpty().withMessage('Tienes que escribir una contraseña').bail()
 	.isLength( { min: 8 }).withMessage('minimo 8 caracteres'),
+	body('password1').custom((value, { req }) => {
+		const regUserpassword = /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
+		// Deberá tener letras mayúsculas, minúsculas, un número y un carácter especial y 8 caracteres.
+			
+	    if (!regUserpassword.test(value)) {
+			throw new Error('Deberá tener letras mayúsculas, minúsculas, un número y un carácter especial.');
+		  }
+	  
+		  // Indicates the success of this synchronous custom validator
+		  return true;
+		}),	
+
 	body('password').custom((value, { req }) => {
 		if (value !== req.body.password1) {
 		  throw new Error('Password y Repetir password no coinciden');
