@@ -20,7 +20,7 @@
         <div class="col-md-10">
             <h2>Formulario de registro</h2>
             <!--onsubmit="verificarPasswords(); return false"-->
-            <form method="POST" action="/register" enctype="multipart/form-data" </form>>
+            <form method="POST" action="/register" enctype="multipart/form-data" >
                 
                 <div class="row">
                     <div class="col-md-6 my-1">
@@ -134,9 +134,14 @@
                                 type="password" 
                                 name="password1"
                                 id="password1"
-                                placeholder="Ingresa tu contraseña" 
-                                class="form-control"
-                                required> 
+                                
+                                class="form-control <%= locals.errors && errors.password1 ? 'is-invalid' : null %>"
+                                >
+                                <% if (locals.errors && errors.password1) { %>
+                                    <div class="text-danger">
+                                        <%= errors.password1.msg %>
+                                    </div>
+                                <% } %>
                         </div>
                     </div>                  
                     <div class="col-md-6 my-1">
