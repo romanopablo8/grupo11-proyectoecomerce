@@ -1,0 +1,68 @@
+CREATE TABLE `user` (
+   `id` INT AUTO_INCREMENT,
+   `firstname` VARCHAR(255),
+   `lastname` VARCHAR(255),
+   `email` VARCHAR(255),
+   `password` VARCHAR(255),
+   `category_id` VARCHAR(255),
+   `foto_perfil` BLOB,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `user_category` (
+   `id` INT AUTO_INCREMENT,
+   `category` VARCHAR(255),
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `cart` (
+   `id` INT AUTO_INCREMENT,
+   `user_id` INT,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `product_cart` (
+   `id` INT AUTO_INCREMENT,
+   `cart_id` INT,
+   `product_id` INT,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `product` (
+   `id` INT AUTO_INCREMENT,
+   `name` VARCHAR(255),
+   `descripcion` VARCHAR(255),
+   `category_id` VARCHAR(255),
+   `image` BLOB,
+   `color_id` INT,
+   `price` INT,
+   `discount` INT,
+   `reference` VARCHAR(255),
+   `descripcionfull` VARCHAR(255),
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `color` (
+   `id` INT AUTO_INCREMENT,
+   `color` VARCHAR(255),
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `product_category` (
+   `id` INT AUTO_INCREMENT,
+   `category` VARCHAR(255),
+   PRIMARY KEY (`id`)
+);
+
+
+ALTER TABLE `user` ADD CONSTRAINT `FK_7f4bb1ad-ef5c-4795-bd9a-caf893982f48` FOREIGN KEY (`category_id`) REFERENCES `user_category`(`id`)  ;
+
+ALTER TABLE `cart` ADD CONSTRAINT `FK_05371955-0d4f-473e-a7f2-5effe462794f` FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)  ;
+
+ALTER TABLE `product_cart` ADD CONSTRAINT `FK_d0691060-9142-4b1f-aec5-3574a149b3f1` FOREIGN KEY (`cart_id`) REFERENCES `cart`(`id`)  ;
+
+ALTER TABLE `product_cart` ADD CONSTRAINT `FK_fe240a52-60d8-4eab-95da-593817366b86` FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)  ;
+
+ALTER TABLE `product` ADD CONSTRAINT `FK_5e5fc944-f6de-4fef-89e8-abed834456bf` FOREIGN KEY (`color_id`) REFERENCES `color`(`id`)  ;
+
+ALTER TABLE `product_category` ADD CONSTRAINT `FK_e7ed46e9-1815-40f7-ab1f-ceebbc29659d` FOREIGN KEY (`id`) REFERENCES `product`(`id`)  ;
