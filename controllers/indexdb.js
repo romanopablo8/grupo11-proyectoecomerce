@@ -1,4 +1,4 @@
-
+    const { Op }    = require("sequelize");
     const db = require("../Data/models");
     const sequelize = db.sequelize;
  //  Connection? 
@@ -11,24 +11,11 @@
     console.error('Unable to connect to the database:', err);
   });
 
- //   db.sequelize.sync()
- //     .then(() => {
- //       console.log("Synced db.");
- //     })
- //     .catch((err) => {
- //       console.log("Failed to sync db: " + err.message);
- //     });
- //   
-    // // drop the table if it already exists
-    // db.sequelize.sync({ force: true }).then(() => {
-    //   console.log("Drop and re-sync db.");
-    // });
-
-
- //   console.log(db);
-   console.log(db.userCategory.findAll());
-   
-  const controller = {
+   //   console.log(db);
+  // console.log(db.User.findAll());
+ //console.log(sequelize);
+  
+ const controller = {
 
         'ecomerce': function( req, res ) {
           

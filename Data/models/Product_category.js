@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'color'; 
+    let alias = 'product_category'; 
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        color: {
+        category: {
             type: dataTypes.STRING(100),
             allowNull: false
         }
@@ -19,9 +19,9 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'updated_at',
         deletedAt: false
     }
-    const color = sequelize.define(alias,cols,config);
+    const product_category = sequelize.define(alias,cols,config);
 
     
 
-    return color
+    return product_category
 };

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'color'; 
+    let alias = 'user_category'; 
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -7,11 +7,12 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        color: {
+        category: {
             type: dataTypes.STRING(100),
             allowNull: false
         }
-    };
+    }
+
     let config = {
         freezeTableName: true,
         timestamps: false,
@@ -19,9 +20,9 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'updated_at',
         deletedAt: false
     }
-    const color = sequelize.define(alias,cols,config);
+    const user_category = sequelize.define(alias,cols,config);
 
-    
+  
+    return user_category
 
-    return color
 };

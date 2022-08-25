@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'color'; 
+    let alias = 'Tabla'; 
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -7,9 +7,16 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        color: {
+        first_name: {
             type: dataTypes.STRING(100),
             allowNull: false
+        },
+        password: {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
+        number: {
+           type: dataTypes.INTEGER
         }
     };
     let config = {
@@ -19,9 +26,8 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'updated_at',
         deletedAt: false
     }
-    const color = sequelize.define(alias,cols,config);
+    const Tabla = sequelize.define(alias,cols,config);
 
     
-
-    return color
+    return Tabla
 };

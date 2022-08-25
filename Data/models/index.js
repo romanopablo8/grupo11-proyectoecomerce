@@ -1,6 +1,6 @@
 //parametros -config -Sequealize
 'use strict';
-const dbConfig = require("../config/config.js");
+const dbConfig = require('../config/config.js');
 
 const fs = require('fs');
 const path = require('path');
@@ -24,16 +24,14 @@ fs
     db[model.name] = model;
   });
 
-Object.keys(db).forEach(modelName => {
+ Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
-});
+}); 
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-//ojo las asociaaciones de la base de datos la otra forma
-//const associatedModels = require( './associations' )( models );
-//db.ecomerce_db = require("./Users.js")(sequelize, Sequelize);
+
 
 module.exports = db;
