@@ -25,10 +25,10 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         category_id: {
-            type: dataTypes.STRING,// REVISAR SI ES INTEGER
+            type: dataTypes.INTEGER,// REVISAR SI ES INTEGER
         },
         foto_perfil: {
-            type: dataTypes.BLOB//revisar tipo dato
+            type: dataTypes.STRING//revisar tipo dato
          },
 
     };

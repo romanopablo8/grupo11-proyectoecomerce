@@ -1,0 +1,204 @@
+<%- include('../partials/head') -%>
+
+    <body>
+        
+       
+        <!-- Create-Form -->
+<div class="container container1 my-5  rounded-4  bg-light">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2>Agregar Producto</h2>
+            <%  
+             let type = "img-products";
+            %>
+            
+            <form method="POST" action="/prodb/update/<%= onepro.id %>?_method=PUT"  >
+                <div class="row">
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <!-- ● Nombre del producto (name) -->
+                            <label><b>Nombre del producto:</b></label>
+                            <input 
+                                type="text" 
+                                name="name"
+                                placeholder="Ingresa el nombre" 
+                                
+                                class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.name : onepro.name %>">
+                                <% if (locals.errors && errors.name) { %>
+                                    <div class="text-danger">
+                                        <%= errors.name.msg %> 
+                                    </div>
+                                <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Descripción:</b></label>
+                            <input 
+                                type="text" 
+                                name="descripcion"
+                                placeholder="Ingresa la descripcion" 
+                                class="form-control <%= locals.errors && errors.descripcion ? 'is-invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.descripcion : onepro.descripcion %>">
+                                <% if (locals.errors && errors.descripcion) { %>
+                                    <div class="text-danger">
+                                        <%= errors.descripcion.msg %> 
+                                    </div>
+                                <% } %>            
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Categoría</b></label>
+                            <select 
+                            name="category_id" 
+                            class="form-select <%= locals.errors && errors.category_id ? 'is-invalid' : null %>"
+                        >
+                            <option value="<%= onepro.product_category.id    %>"><%= onepro.product_category.category    %></option>
+                               
+                            <% allcate.forEach(cate => { %>
+                                <option 
+                                 value="<%= cate.id %>"
+                                 <%= locals.oldData && (allcate === oldData.category_id) ? 'selected' : null %> 
+                                 >
+                                 <%= cate.category %>
+                                 </option>
+                                <% }); %>
+                            </select>
+                            <% if (locals.errors && errors.category_id) { %>
+                                <div class="text-danger">
+                                    <%= errors.category_id.msg %>
+                            </div>
+                        <% } %>
+                                
+                        </div>
+                    </div> 
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Imagen del producto:</b></label>
+                            <input 
+                                type="text" 
+                                value="<%=onepro.image %>"
+                                name="image"
+                                class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.image) { %>
+                                <div class="text-danger">
+                                    <%= errors.image.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>                                                  
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Color:</b></label>
+                            <select 
+                                name="color_id" 
+                                class="form-select <%= locals.errors && errors.colors ? 'is-invalid' : null %>">
+                                <option value="<%= onepro.color.id    %>"><%= onepro.color.color   %></option>
+
+                                <% allcolor.forEach(colores => { %>
+                                    <option 
+                                     value="<%= colores.id %>"
+                                     <%= locals.oldData && (allcolor === oldData.color_id) ? 'selected' : null %> 
+                                     >
+                                     <%= colores.color %>
+                                     </option>
+                                    <% }); %>
+                                </select>
+                                <% if (locals.errors && errors.color_id) { %>
+                                    <div class="text-danger">
+                                        <%= errors.color_id.msg %>
+                                    </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Precio</b></label>
+                            <input 
+                                type="number" 
+                                name="price" 
+                                placeholder="Ingresa el precio" 
+                                class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.price : onepro.price %>"
+                            >
+                            <% if (locals.errors && errors.price) { %>
+                                <div class="text-danger">
+                                    <%= errors.price.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Descuento</b></label>
+                            <input 
+                                type="number" 
+                                name="discount" 
+                                placeholder="Ingresa el descuento" 
+                                class="form-control <%= locals.errors && errors.discount ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.discount : onepro.discount %>"
+                            >
+                            <% if (locals.errors && errors.discount) { %>
+                                <div class="text-danger">
+                                    <%= errors.discount.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>Referencia</b></label>
+                            <input 
+                                type="text" 
+                                name="reference" 
+                                placeholder="583-73-0511" 
+                                class="form-control <%= locals.errors && errors.reference ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.reference : onepro.reference %>"
+                            >
+                            <% if (locals.errors && errors.reference) { %>
+                                <div class="text-danger">
+                                    <%= errors.reference.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-1">
+                        <div class="form-group">
+                            <label><b>descripcion Completa</b></label>
+                            <textarea 
+                                
+                                
+                                rows="10" cols="30"
+                                name="descripcionfull" 
+                                placeholder="full texto"
+                                value="<%= onepro.descripcionfull %>"
+                                class="form-control <%= locals.errors && errors.descripcionfull ? 'is-invalid' : null %>"
+                            ></textarea>
+                            <% if (locals.errors && errors.descripcionfull) { %>
+                                <div class="text-danger">
+                                    <%= errors.descripcionfull.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                   
+
+                    <div class="col-12 my-3 boton-register">
+                    <!-- BOTONES CREAR  -->
+                    <input  type="submit" name="MODIFICAR" value="MODIFICAR" placeholder="">
+                    </div>
+                    <div class="col-12 my-3 boton-register">
+                    <!-- BOTONES CANCELAR -->
+                    <input  type="reset" name="CANCELAR" value="CANCELAR" placeholder="">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+      
+    </body>

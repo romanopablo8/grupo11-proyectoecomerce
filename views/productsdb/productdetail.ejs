@@ -1,0 +1,45 @@
+<%- include('../partials/headuserdb') -%>
+<body></body>
+<figure>
+    <img src="" alt="Logo">
+</figure> 
+<h1>Detalles del Producto: <%= Product.name %></h1>
+
+
+    <div class="container  pt-3">
+        <div class="cardx " >
+            <div class="card-left2">
+                <figure><img class="card-img-top" src="/img/img-products/<%= Product.image %>" alt="Card image"></figure>
+            </div>    
+            
+            
+            <div class="card-content">
+              <h4 class="card-title">NOMBRE: <%= Product.name %></h4>
+              
+              
+              <p class="card-text">DESCRIPCION: <%= Product.descripcion %> </p>
+              <p>CATEGORIA: <%= Product.product_category.category %> </p>
+              <p>IMAGEN: <%= Product.image %> </p>
+              <p>COLOR: <%= Product.color.color %> </p>
+              <p>PRECIO: <%= Product.price %> </p>
+              <p>DESCUENTO: <%= Product.discount %> </p>
+              <p>REFECENCIA: <%= Product.reference %> </p>
+              <p>DESCRIPCIONFULL: <%= Product.descripcionfull %> </p>
+              <a href="/prodb/edit/<%= Product.id %>" class="btn btn-primary">Modificar</a>
+              <a href="/prodb/productlist" class="btn btn-primary">Listado de productos</a>
+              
+              <a> 
+                <br>
+                <br>
+                <form action="/prodb/detail/<%= Product.id %>?_method=DELETE" method="POST">
+                    
+                     <button class="btn btn-primary" type="submit">Borrar el producto <%= Product.id %> </button>
+                       
+                </form>
+              </a>
+            </div>
+        </div>
+      </div>
+  
+<body>
+</html>

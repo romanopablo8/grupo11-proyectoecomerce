@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+    <body>
+         
+    
+    
+<!-- Register-Form -->
+<div class="container my-5  rounded-4  bg-light">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h2>Editando: <%= user.firstname %></h2>
+           
+            <form method="POST" action="/db/update/<%= user.id %>?_method=PUT" >
+                
+                <div class="row">
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Nombre:</b></label>
+                            <input 
+                                type="text" 
+                                name="firstname"
+                                placeholder="Ingresa tu nombre" 
+                                class="form-control <%= locals.errors && errors.firstname ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.firstname : user.firstname %>">
+                                <% if (locals.errors && errors.firstname) { %>
+                                    <div class="text-danger">
+                                        <%= errors.firstname.msg %> 
+                                    </div>
+                                <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Apellido:</b></label>
+                            <input 
+                                type="text" 
+                                name="lastname"
+                                placeholder="Ingresa tu apellido" 
+                                class="form-control <%= locals.errors && errors.lastname ? 'is-invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.lastname : user.lastname %>">
+                                <% if (locals.errors && errors.lastname) { %>
+                                    <div class="text-danger">
+                                        <%= errors.lastname.msg %> 
+                                    </div>
+                                <% } %>            
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Usuario:</b></label>
+                            <input 
+                                type="text" 
+                                name="user_name"
+                                placeholder="Ingresa tu nombre de usuari@" 
+                                class="form-control <%= locals.errors && errors.user_name ? 'is-invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.user_name : user.user_name %>">
+                                <% if (locals.errors && errors.user_name) { %>
+                                    <div class="text-danger">
+                                        <%= errors.user_name.msg %> 
+                                    </div>
+                                <% } %>            
+                        </div>
+                    </div>                              
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Correo electrónico:</b></label>
+                            <input 
+                                type="text" 
+                                name="email" 
+                                placeholder="Ingresa tu E-mail" 
+                                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.email : user.email %>"
+                            >
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Categoria:</b></label>
+                            
+                            <select 
+                                name="category_id" 
+                                class="form-select <%= locals.errors && errors.category_id ? 'is-invalid' : null %>">
+                                <option value="<%= user.user_category.id %>" ><%= user.user_category.category %></option>
+                                alluser, allcate
+                                <% allcate.forEach(cate => { %>
+                                <option 
+                                 value="<%= cate.id %>"
+                                 <%= locals.oldData && (onecategoryuser === oldData.category) ? 'selected' : null %> 
+                                 >
+                                 <%= cate.category %>
+                                 </option>
+                                <% }); %>
+                            </select>
+                            <% if (locals.errors && errors.category) { %>
+                                <div class="text-danger">
+                                    <%= errors.category.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Imagen de perfil:</b></label>
+                            <input 
+                                type="text" 
+                                name="foto_perfil"
+                                value="<%= user.foto_perfil %>"
+                                class="form-control <%= locals.errors && errors.foto_perfil ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.foto_perfil) { %>
+                                <div class="text-danger">
+                                    <%= errors.foto_perfil.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div> 
+                  
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Password:</b></label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password"
+                                value="<%= user.password %>"
+                                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="text-danger">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+        
+                    </div>
+                   
+
+                    <div class="col-12 my-3 boton-register">
+                        
+                        <input type="submit" name="" value="Actualizar">
+                        <a href="/db/userlist">
+                            <input type="button" value="Listado de Usuarios">
+                        </a>
+                        <a class="botonVolver" href="/db/userlist">Listado de Usuarios</a>
+                      
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- //Register-Form -->
+
+   
+    
+    </body>
+</html>

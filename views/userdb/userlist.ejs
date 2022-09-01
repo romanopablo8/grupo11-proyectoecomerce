@@ -1,0 +1,41 @@
+<%- include('../partials/headuserdb') -%>
+<body>
+  <figure>
+    <img src="" alt="Logo">
+  </figure>
+  <h1>LISTADO DE USUARIOS</h1>
+  <br>
+  <p>
+      <a class="btn btn-primary" href="/db/add">Agregar un Usuario</a>
+      <a class="btn btn-primary" href="/">inicio</a>
+
+  </p>
+  <br>
+    <ul>
+        <% for( let i = 0; i < user.length; i++ ) { %>
+          <div class="container  pt-1 ">
+            <div class="cardx " >
+                <div class="card-left">
+                    <figure><img class="card-img-top" src="/img/users/<%= user[i].foto_perfil %>" alt="Card image"></figure>
+                </div>    
+                
+                
+                <div class="card-content">
+                  <p>NOMBRE: <%= user[i].firstname %></p>
+                  <p >APELLIDO: <%= user[i].lastname %> </p>
+                  <p>EMAIL: <%= user[i].email %> </p>
+                  
+                  <a href="/db/detail/<%= user[i].id %>" class="btn btn-primary">Ver Detalle</a>
+                  
+                  
+                </div>
+            </div>
+          </div>
+
+        
+       <% } %>
+
+    </ul>
+ 
+</body>
+</html>

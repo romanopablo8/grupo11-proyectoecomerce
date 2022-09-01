@@ -1,0 +1,32 @@
+<%- include('../partials/headuserdb') -%>
+<body></body>
+<figure>
+    <img src="" alt="Logo">
+</figure> 
+<h1>Detalles del Usuario: <%= user.firstname %></h1>
+
+
+    <div class="container  pt-5 ">
+        <div class="cardx " >
+            <div class="card-left">
+                <figure><img class="card-img-top" src="/img/users/<%= user.foto_perfil %>" alt="Card image"></figure>
+            </div>    
+            
+            
+            <div class="card-content">
+              <h4 class="card-title">NOMBRE: <%= user.firstname %></h4>
+              
+              
+              <p class="card-text">APELLIDO: <%= user.lastname %> </p>
+              <p>EMAIL: <%= user.email %> </p>
+              <p>PASSWORD: <%= user.password %> </p>
+              <p>CATEGORIA: <%= user.user_category.category %> </p>
+              <a href="/db/edit/<%= user.id %>" class="btn btn-primary">Modificar</a>
+              <a href="/db/userlist" class="btn btn-primary">Listado de Usuarios</a>
+              
+            </div>
+        </div>
+      </div>
+  
+<body>
+</html>

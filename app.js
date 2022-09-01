@@ -3,7 +3,9 @@ const app = express();
 const path = require('path');
 const methodOverride =  require('method-override'); 
 // controllers require
-const indexdb = require('./routes/indexdb');
+const dbproduct = require('./routes/dbproduct');
+const dbuser = require('./routes/dbuser');
+
 
 const index = require('./routes/index');
 const user = require('./routes/users');
@@ -39,7 +41,9 @@ app.use(userLoggedMiddleware);
 app.listen(3000, ()=>{
   console.log('Servidor funcionando');});
 
-app.use('/', indexdb);
+app.use('/',dbproduct);  
+app.use('/', dbuser);
+
 
 app.use('/', index);
 app.use('/', user);

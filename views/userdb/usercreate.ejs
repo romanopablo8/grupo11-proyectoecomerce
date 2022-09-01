@@ -1,0 +1,190 @@
+<%- include('../partials/head') -%>
+<!-- validar contraseña display -->
+<style type="text/css">
+    .ocultar {
+        display: none;
+    }
+
+    .mostrar {
+        display: block;
+    }
+</style>
+
+    <body>
+         
+    <%- include('../partials/header2') -%>
+    
+<!-- Register-Form -->
+<div class="container my-5  rounded-4  bg-light">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h2>Formulario de Crear Usuario</h2>
+            <!--onsubmit="verificarPasswords(); return false"-->
+            <form method="POST" action="/db/create" enctype="multipart/form-data" >
+                
+                <div class="row">
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Nombre:</b></label>
+                            <input 
+                                type="text" 
+                                name="firstname"
+                                placeholder="Ingresa tu nombre" 
+                                class="form-control <%= locals.errors && errors.firstname ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.firstname : null %>">
+                                <% if (locals.errors && errors.firstname) { %>
+                                    <div class="text-danger">
+                                        <%= errors.firstname.msg %> 
+                                    </div>
+                                <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Apellido:</b></label>
+                            <input 
+                                type="text" 
+                                name="lastname"
+                                placeholder="Ingresa tu apellido" 
+                                class="form-control <%= locals.errors && errors.lastname ? 'is-invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.lastname : null %>">
+                                <% if (locals.errors && errors.lastname) { %>
+                                    <div class="text-danger">
+                                        <%= errors.lastname.msg %> 
+                                    </div>
+                                <% } %>            
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Usuario:</b></label>
+                            <input 
+                                type="hidden"    
+                                name="user_name"
+                                placeholder="Ingresa tu nombre de usuari@" 
+                                class="form-control <%= locals.errors && errors.user_name ? 'is-invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.user_name : null %>">
+                                <% if (locals.errors && errors.user_name) { %>
+                                    <div class="text-danger">
+                                        <%= errors.user_name.msg %> 
+                                    </div>
+                                <% } %>            
+                        </div>
+                    </div>                              
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Correo electrónico:</b></label>
+                            <input 
+                                type="text" 
+                                name="email" 
+                                placeholder="Ingresa tu E-mail" 
+                                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.email : null %>"
+                            >
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Categoria:</b></label>
+                            <select 
+                                name="category_id" 
+                                class="form-select <%= locals.errors && errors.category_id ? 'is-invalid' : null %>">
+                                <option value="" >Elegí una Categoria</option>
+                               
+                                <% allcate.forEach(cate => { %>
+                                <option 
+                                 value="<%= cate.id %>"
+                                 <%= locals.oldData && (allcate === oldData.category_id) ? 'selected' : null %> 
+                                 >
+                                 <%= cate.category %>
+                                 </option>
+                                <% }); %>
+                            </select>
+                            <% if (locals.errors && errors.category_id) { %>
+                                <div class="text-danger">
+                                    <%= errors.category_id.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Imagen de perfil:</b></label>
+                            <input 
+                                type="file" 
+                                name="foto_perfil"
+                                class="form-control <%= locals.errors && errors.foto_perfil ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.foto_perfil) { %>
+                                <div class="text-danger">
+                                    <%= errors.foto_perfil.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div> 
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Password:</b></label>
+                            <input 
+                                type="password" 
+                                name="password1"
+                                id="password1"
+                                
+                                class="form-control <%= locals.errors && errors.password1 ? 'is-invalid' : null %>"
+                                >
+                                <% if (locals.errors && errors.password1) { %>
+                                    <div class="text-danger">
+                                        <%= errors.password1.msg %>
+                                    </div>
+                                <% } %>
+                        </div>
+                    </div>                  
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Repetir Password:</b></label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password"
+                                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="text-danger">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+        <!-- Mensajes de Verificación -->
+        <div id="error" class="alert alert-danger ocultar" role="alert">
+            Las Contraseñas no coinciden, vuelve a intentar !
+        </div>
+        <div id="ok" class="alert alert-success ocultar" role="alert">
+            Las Contraseñas coinciden ! (Procesando formulario ... )
+        </div>
+        <!-- Fin Mensajes de Verificación -->
+                    </div>
+                   
+
+                    <div class="col-12 my-3 boton-register">
+                        
+                        <input type="submit" name="" value="Crear Usuario">
+                     
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- //Register-Form -->
+
+    <%- include('../partials/footer') -%>
+
+    <script src="/js/validar.js"></script>
+
+    </body>
+</html>
