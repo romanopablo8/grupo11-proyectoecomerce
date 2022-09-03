@@ -1,6 +1,8 @@
 
 const bcryptjs = require('bcryptjs');
 
+const {	validationResult} = require('express-validator');
+
 const { Op }    = require("sequelize");
 
 const db = require("../Data/models");
@@ -60,7 +62,7 @@ const dbusercontroller = {
    // res.render( 'userdb/userlist' ); 
     })   
    },
-   'add': function(req, res) {
+   add: function(req, res) {
     let promuser = db.User.findAll();
     let promcate = db.user_category.findAll();
     
@@ -71,8 +73,34 @@ const dbusercontroller = {
     ).catch(error => console.log(error))
     
    },    
-   'create': function( req, res ) {
-   
+   create: function( req, res ) {
+    const resultValidation = validationResult(req);
+ /*    const resultValidation = validationResult(req);
+   console.log(req.body);
+   console.log(resultValidation);
+   if (resultValidation.errors.length > 0) {
+    return res.render('userdb/usercreate', {
+        errors: resultValidation.mapped(),
+        oldData: req.body
+    })}; */
+     	//Validacion de usuario registrado
+        //const resultValidation = validationResult(req);
+        console.log(resultValidation);
+		if (resultValidation.errors.length > 0) {
+
+            let promcate = db.user_category.findAll();
+            Promise
+           .all([ promcate]).then(([allcate]) => {
+		//	console.log(allcate);
+            return res.render('userdb/usercreate', {
+				errors: resultValidation.mapped(),
+				oldData: req.body,allcate
+			})
+        
+        }).catch(error => console.log(error));
+		}
+ 
+   else{
        db.User.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -83,11 +111,11 @@ const dbusercontroller = {
         
     })        .then(()=> {
         return res.redirect('/db/userlist')
-        //return res.redirect('/')
+        
     })            
     .catch(error => console.log(error))
-  }
-
+  } 
+}
 }
 
 

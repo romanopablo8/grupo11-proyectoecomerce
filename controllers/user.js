@@ -23,8 +23,9 @@ const controller = {
     },
     registerStore: function(req,res){
 		//Validacion de usuario registrado
+	//	console.log(req.body)
         const resultValidation = validationResult(req);
-
+	//	console.log(resultValidation)
 		if (resultValidation.errors.length > 0) {
 			return res.render('users/register', {
 				errors: resultValidation.mapped(),

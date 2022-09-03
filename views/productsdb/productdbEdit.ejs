@@ -7,7 +7,7 @@
 <div class="container container1 my-5  rounded-4  bg-light">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2>Agregar Producto</h2>
+            <h2>Editar el Producto :  <%= onepro.id %></h2>
             <%  
              let type = "img-products";
             %>
@@ -169,14 +169,15 @@
                         <div class="form-group">
                             <label><b>descripcion Completa</b></label>
                             <textarea 
-                                
+                            
                                 
                                 rows="10" cols="30"
                                 name="descripcionfull" 
                                 placeholder="full texto"
-                                value="<%= onepro.descripcionfull %>"
+                                
                                 class="form-control <%= locals.errors && errors.descripcionfull ? 'is-invalid' : null %>"
-                            ></textarea>
+                            ><%= onepro.descripcionfull %>
+                            </textarea>
                             <% if (locals.errors && errors.descripcionfull) { %>
                                 <div class="text-danger">
                                     <%= errors.descripcionfull.msg %>
@@ -189,11 +190,12 @@
                     <div class="col-12 my-3 boton-register">
                     <!-- BOTONES CREAR  -->
                     <input  type="submit" name="MODIFICAR" value="MODIFICAR" placeholder="">
-                    </div>
-                    <div class="col-12 my-3 boton-register">
+                    
                     <!-- BOTONES CANCELAR -->
-                    <input  type="reset" name="CANCELAR" value="CANCELAR" placeholder="">
-                    </div>
+                    <a href="/prodb/productlist">
+                    <input  type="button" name="CANCELAR" value="CANCELAR" placeholder="">
+                   </a>
+                </div>
                 </div>
             </form>
         </div>
