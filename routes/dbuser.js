@@ -5,7 +5,15 @@ const dbusercontroller = require( '../controllers/userdb' );
 const validations = require('../middlewares/validatedbUser');
 const uploadFile = require ('../middlewares/diskStorage')
 
+// /* GET LOGIN page. */
+router.get( '/db/login', dbusercontroller.login);
+router.post('/db/login', dbusercontroller.processlogin)
 
+// Perfil de Usuario
+router.get('/db/profile', dbusercontroller.profile);
+
+// Logout
+router.get('/db/logout', dbusercontroller.logout);
 
 /* usuarios list */
 router.get( '/db/userlist', dbusercontroller.list );

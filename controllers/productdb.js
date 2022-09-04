@@ -124,7 +124,7 @@ list: function( req, res, next ) {
         
       )
        .then(Product => {
-      //  console.log(JSON.stringify(Product, null, 2));
+     //   console.log(JSON.stringify(Product, null, 2));
       
         res.render( 'productsdb/productdetail', {Product} );
        });
