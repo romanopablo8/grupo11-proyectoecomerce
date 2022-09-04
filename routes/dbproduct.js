@@ -1,11 +1,13 @@
 const express = require('express');
 const router  = express.Router();
 const uploadFile = require ('../middlewares/diskStorageprod')
+const validations = require('../middlewares/validatedbProd');
+
 const dbproductcontroller = require( '../controllers/productdb' );
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/prodb/add', dbproductcontroller.add); 
-router.post('/prodb/create', uploadFile.single('image'), dbproductcontroller.store); 
+router.post('/prodb/add', uploadFile.single('image'),validations, dbproductcontroller.store); 
 
 /* PRODUCT list */
 router.get( '/prodb/productlist', dbproductcontroller.list );

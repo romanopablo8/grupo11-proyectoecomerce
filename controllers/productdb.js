@@ -18,24 +18,26 @@ add: function(req,res){
    },    
 
 store: function(req,res){
-    //console.log(req.body)
-   		//Validacion de products
-        
-            const resultValidationp = validationResult(req);
-
-           if (resultValidationp.errors.length > 0) {
-               return res.render('productsdb/productdbCreate', {
-                   errors: resultValidationp.mapped(),
-                   oldData: req.body
-               });
-           } 
-
-        db.Product.create({
+       		//Validacion de products
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+            let promcate = db.product_category.findAll();
+            let promcol = db.color.findAll();
+    Promise
+    .all([promcate, promcol])
+    .then(([allcate, allcolor]) => {
+        return res.render('productsdb/productdbCreate', {
+            errors: resultValidation.mapped(),
+            oldData: req.body,allcate, allcolor})}
+    ).catch(error => console.log(error))
+        }
+   else{  
+          db.Product.create({
          name        : req.body.name,
 		 descripcion : req.body.descripcion,
 		 category_id :  req.body.category_id,
          image       : req.file.filename,
-		 color_id   : req.body.colors_id,
+		 color_id   : req.body.color_id,
          price       : req.body.price,
 		 discount    : req.body.discount,
          reference    : req.body.reference,
@@ -43,11 +45,11 @@ store: function(req,res){
          
          
      })        .then(()=> {
-        res.redirect('productlist');
+       return res.redirect('productlist');
          //return res.redirect('/')
      })            
      .catch(error => console.log(error))
-   
+    }
         
        
 }, 
@@ -72,7 +74,7 @@ update: function(req,res){
         descripcion : req.body.descripcion,
         category_id :  req.body.category_id,
         image       : req.body.image,
-        color_id   : req.body.colors_id,
+        color_id   : req.body.color_id,
         price       : req.body.price,
         discount    : req.body.discount,
         reference    : req.body.reference,
@@ -99,14 +101,16 @@ erase: function(req,res){
     .catch(error => res.send(error)) 
 },  
 list: function( req, res, next ) {
-      
         sequelize.findAll( 'Product', {
             
             attributes: [ "id","name","image","descripcion","reference"],
            
 
         }).then( function( product ){
-            console.log( product );
+            
+           /*  const ccc =(JSON.stringify(product, null, 2));
+            const pro = (JSON.parse(ccc, 'utf-8'));
+            console.log(pro);    */
             res.render( 'productsdb/productlist', {product} );
             
 

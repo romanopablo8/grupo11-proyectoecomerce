@@ -279,5 +279,16 @@
   "password1": "123",
   "password": "$2a$10$tqhBbW.PADA1hT1fk99bCuB/3kYq5IwO8VEq2mJ8sNgEQd6xZojDW",
   "avatar": "user-1660171855209.jpg"
+ },
+ {
+  "id": 32,
+  "firstname": "andrea caro",
+  "lastname": "Barbrooknnn",
+  "user_name": "avatar",
+  "email": "jacabrales5@misena.edu.co",
+  "category": "usuario",
+  "password1": "Roberto.21",
+  "password": "$2a$10$JGeqG.4yqDxW6./9tUs2wuUIQeJIZOuqFUPFAoiHaxpokyA9kNDtK",
+  "avatar": "user-1662241783713.jpg"
  }
 ]

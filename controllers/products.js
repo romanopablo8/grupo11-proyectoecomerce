@@ -3,7 +3,7 @@ const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+//console.log(products);
 const {	validationResult} = require('express-validator');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -39,7 +39,7 @@ const controller = {
 		let name        = req.body.name;
 		let descripcion = req.body.descripcion;
 		let category    = req.body.category;
-        let image       = req.body.image;
+        let image       = req.file.filename;
 		let color       = req.body.colors;
         let price       = req.body.price;
 		let discount    = req.body.discount;

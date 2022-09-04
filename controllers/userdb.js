@@ -9,6 +9,21 @@ const db = require("../Data/models");
 const models = require( '../Data/handlers/associations' );
 
 //console.log(models);
+//  Connection? 
+const sequelize = db.sequelize
+sequelize
+.authenticate()
+.then(() => {
+  console.log('Connection has been established successfully.');
+})
+.catch(err => {
+  console.error('Unable to connect to the database:', err);
+});
+
+//   console.log(db);
+// console.log(db.User.findAll());
+//console.log(sequelize);
+//  Connection? 
 const dbusercontroller = {
 
     'list': function( req, res ) {
@@ -75,46 +90,48 @@ const dbusercontroller = {
    },    
    create: function( req, res ) {
     const resultValidation = validationResult(req);
- /*    const resultValidation = validationResult(req);
-   console.log(req.body);
-   console.log(resultValidation);
-   if (resultValidation.errors.length > 0) {
-    return res.render('userdb/usercreate', {
-        errors: resultValidation.mapped(),
-        oldData: req.body
-    })}; */
-     	//Validacion de usuario registrado
-        //const resultValidation = validationResult(req);
-        console.log(resultValidation);
-		if (resultValidation.errors.length > 0) {
-
-            let promcate = db.user_category.findAll();
-            Promise
-           .all([ promcate]).then(([allcate]) => {
-		//	console.log(allcate);
-            return res.render('userdb/usercreate', {
-				errors: resultValidation.mapped(),
-				oldData: req.body,allcate
-			})
-        
-        }).catch(error => console.log(error));
-		}
+    let promuser = db.User.findAll();
+    let promcate = db.user_category.findAll();
+    let promemail = db.User.findOne({    where: {  email: req.body.email  }});
+    Promise
+    .all([promuser, promcate, promemail])
+    .then(([alluser, allcate,onemail]) => {
+      if (onemail) {
+        return res.render('userdb/usercreate', {alluser, allcate,
+          errors: {
+              email: {
+                  msg: 'Este email ya está registrado'
+              }
+          },
+          oldData: req.body
+      });
+      }
+      if (resultValidation.errors.length > 0) {
+       
+//	console.log(allcate);
+        return res.render('userdb/usercreate', {alluser, allcate,
+    errors: resultValidation.mapped(),
+    oldData: req.body,allcate
+  })
+  }
  
-   else{
-       db.User.create({
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            category_id: req.body.category_id,
-            foto_perfil: req.file.filename,
+    }).then(()=> {
+      db.User.create({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        category_id: req.body.category_id,
+        foto_perfil:  req.file.filename ? req.file.filename : 'default.png'//req.file.filename,
+  })   
+       
         
-    })        .then(()=> {
+    }).then(()=> {
         return res.redirect('/db/userlist')
         
     })            
     .catch(error => console.log(error))
-  } 
+  
 }
 }
 

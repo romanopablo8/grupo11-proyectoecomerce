@@ -8,9 +8,9 @@ module.exports = [
     body('descripcion').notEmpty().withMessage('Tienes que escribir una descripcion').bail()
 	.isLength( { min: 20 }).withMessage('minimo 20 caracteres'),
 
-    body('category').notEmpty().withMessage('Tienes que elegir una category'), 
+    body('category_id').notEmpty().withMessage('Tienes que elegir una category'), 
 		
-	body('colors').notEmpty().withMessage('Tienes que elegir un color'),
+	body('color_id').notEmpty().withMessage('Tienes que elegir un color'),
 	 body('image').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];

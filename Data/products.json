@@ -1,13 +1,13 @@
 [
     {
         "id": 1,
-        "name": "Transcof",
+        "name": "editado",
         "descripcion": "orci nullam molestie nibh in lectus pellentesque at nulla",
         "category": "Deportivas",
-        "image": "lentesdeportivo3.jpg",
-        "color": "Yellow",
-        "price": 1594,
-        "discount": 33,
+        "image": "lentes7-2.jpg",
+        "color": "",
+        "price": "1",
+        "discount": "33",
         "reference": "647-02-4948",
         "descripcionfull": "eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed"
     },
@@ -958,5 +958,17 @@
         "discount": 19,
         "reference": "238-90-2130",
         "descripcionfull": "in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in"
+    },
+    {
+        "id": 81,
+        "name": "JORGE A ",
+        "descripcion": "que pasa con esto quue sera",
+        "category": "Deportivas",
+        "image": "prod-1662242795798.jpg",
+        "color": "green",
+        "price": "2222",
+        "discount": "2",
+        "reference": "444444-333-3",
+        "descripcionfull": "ccccccccccccccccccccccccccccccccc"
     }
 ]

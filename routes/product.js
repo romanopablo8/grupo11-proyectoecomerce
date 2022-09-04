@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-
+const uploadFile = require ('../middlewares/diskStorageprod')
 const validations = require('../middlewares/validateCreateMiddleware');
 
 const controller = require( '../controllers/products' );
@@ -19,7 +19,7 @@ router.get( '/productedit', controller.productedit); */
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/products/create', controller.create); 
-router.post('/products/create',validations, controller.store); 
+router.post('/products/create', uploadFile.single('image'),validations, controller.store); 
 /*** GET ONE PRODUCT ***/ 
 router.get('/products/:id', controller.detail); 
 /*** EDIT ONE PRODUCT ***/ 
