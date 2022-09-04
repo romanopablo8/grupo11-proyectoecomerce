@@ -20,7 +20,7 @@
         <div class="col-md-10">
             <h2>Formulario de Crear Usuario</h2>
             <!--onsubmit="verificarPasswords(); return false"-->
-            <form method="POST" action="/db/add" enctype="multipart/form-data" >
+            <form method="POST" action="/db/add" enctype="multipart/form-data" id="formulario" class="formulario">
                 
                 <div class="row">
                     <div class="col-md-6 my-1">
@@ -29,6 +29,7 @@
                             <input 
                                 type="text" 
                                 name="firstname"
+                                id="group__firstname"
                                 placeholder="Ingresa tu nombre" 
                                 class="form-control <%= locals.errors && errors.firstname ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.firstname : null %>">
@@ -45,6 +46,7 @@
                             <input 
                                 type="text" 
                                 name="lastname"
+                                id="group__lastname"
                                 placeholder="Ingresa tu apellido" 
                                 class="form-control <%= locals.errors && errors.lastname ? 'is-invalid' : null %>" 
                                 value="<%= locals.oldData ? oldData.lastname : null %>">
@@ -61,6 +63,7 @@
                             <input 
                                 type="hidden"    
                                 name="user_name"
+                                id="group__user_name"
                                 placeholder="Ingresa tu nombre de usuari@" 
                                 class="form-control <%= locals.errors && errors.user_name ? 'is-invalid' : null %>" 
                                 value="<%= locals.oldData ? oldData.user_name : null %>">
@@ -77,6 +80,7 @@
                             <input 
                                 type="text" 
                                 name="email" 
+                                id="group__email"
                                 placeholder="Ingresa tu E-mail" 
                                 class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.email : null %>"
@@ -93,6 +97,7 @@
                             <label><b>Categoria:</b></label>
                             <select 
                                 name="category_id" 
+                                id="group__category_id"
                                 class="form-select <%= locals.errors && errors.category_id ? 'is-invalid' : null %>">
                                 <option value="" >Elegí una Categoria</option>
                                
@@ -118,6 +123,7 @@
                             <input 
                                 type="file" 
                                 name="foto_perfil"
+                                id="group__foto_perfil"
                                 class="form-control <%= locals.errors && errors.foto_perfil ? 'is-invalid' : null %>"
                             >
                             <% if (locals.errors && errors.foto_perfil) { %>
@@ -133,7 +139,7 @@
                             <input 
                                 type="password" 
                                 name="password1"
-                                id="password1"
+                                id="group__password1"
                                 
                                 class="form-control <%= locals.errors && errors.password1 ? 'is-invalid' : null %>"
                                 >
@@ -150,7 +156,7 @@
                             <input 
                                 type="password" 
                                 name="password" 
-                                id="password"
+                                id="group__password"
                                 class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                             >
                             <% if (locals.errors && errors.password) { %>
@@ -185,6 +191,8 @@
     <%- include('../partials/footer') -%>
 
     <script src="/js/validar.js"></script>
+    <script src="/js/validation-users.js"></script>
+    
 
     </body>
 </html>

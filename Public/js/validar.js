@@ -2,8 +2,8 @@
 function verificarPasswords() {
 
     // Ontenemos los valores de los campos de contraseñas 
-    password1 = document.getElementById('password1');
-    password = document.getElementById('password');
+    password1 = document.getElementById('group__password1');
+    password = document.getElementById('group__password');
 
     // Verificamos si las constraseñas no coinciden 
     if (password1.value != password.value) {

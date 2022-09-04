@@ -94,3 +94,14 @@ form .userdetalle-register, .input-register{
     background: linear-gradient(135deg, #bb83d1, #8ac7f0 );
 
 }
+
+
+.formulario__group-correct .formulario__validation-state {
+	color: #1ed12d;
+	opacity:1;
+}
+.formulario__group-incorrect .formulario__validation-state {
+	color: #bb2929;
+    border: 2px solid #bb2929;
+	opacity:1;
+}
