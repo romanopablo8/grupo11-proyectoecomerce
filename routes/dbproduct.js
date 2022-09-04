@@ -16,6 +16,9 @@ router.post( '/prodb/productlist', dbproductcontroller.buscar );
 /* PRODUCT details */
 router.get( '/prodb/detail/:id', dbproductcontroller.detail );
 
+/* PRODUCT details */
+router.get( '/prodb/detail2/:id', dbproductcontroller.detail2 );
+
 /* PRODUCT EDIT */
 router.get( '/prodb/edit/:id', dbproductcontroller.edit );
 /* PRODUCT UPDATE */

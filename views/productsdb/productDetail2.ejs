@@ -1,0 +1,109 @@
+
+<%- include('../partials/head', {title: title}) -%>
+<body>
+ 
+<%- include('../partials/header2') -%>
+
+    <section class="titleDetails" >
+    <h3>Referencia: <%=Product.reference%></h3>
+    </section>
+    <main class="conteiner-products">
+        
+        <section class="flex-detail">
+            <article class="flex_article-detail">
+               
+                    <div class="flex-other_img">
+                        <div class="flex_img2"><img src ="/img/img-products/<%=Product.image%>" alt="" class="ofertas_img"></div>
+                        <div class="flex_img2"><img src ="/img/img-products/<%=Product.image%>" alt="" class="ofertas_img"></div>
+                        <div class="flex_img2"><img src ="/img/img-products/<%=Product.image%>" alt="" class="ofertas_img"></div>
+                        <div class="flex_img2"><img src ="/img/img-products/<%=Product.image%>" alt="" class="ofertas_img"></div>
+                    </div>
+               
+               <div class="flex_prod"><img src ="/img/img-products/<%=Product.image%>" alt="" class="flex_prod"></div>
+
+               <section class="precioDetail">
+                <div>
+                    <label for="price_2">Precio</label>
+                    <p class="price_2">$<%=Product.price%></p>
+                    </div>
+                    <div>
+                    <label for="offers_2">Descuento</label>
+                    <p class="offers_2"><%=Product.discount%> % OFF</p>
+                    </div>
+                </section>
+                <section class="buyDescripcionDetails">
+                    <div class="descripDetails">
+                        <b><%=Product.name%></b>
+                    </div>
+                    <div class="faltaclase">
+                        <b><%=Product.descripcion%></b>
+                    </div>
+                    <div class="flex_buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                </section>  
+                
+                
+
+              
+            </article>
+            <section class="descripcionLarge">
+                <article>
+                <div>
+                    DESCRIPCION COMPLETA <br><br>
+                    <b><%=Product.descripcionfull%></b>
+                    
+                </div>
+                </article>   
+            </section>
+
+
+           
+        </section class="otrosRecomendados">   
+            <div><h3  class="titleDetails" >Recomendados</h3></div><br>
+            <section class="flex-offers2" style="width: 90%;margin: auto;">
+                <article class="flex_article2" style="padding-left: 1%; padding-right: 1%;">
+                    <div class="flex_img2"><img src =/img/lentesdeportivo1.jpg alt="" class="ofertas_img"></div>
+                    <section class="botonydescripRecomend">
+                        <div class="descripRecomendado">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </div>
+                        <div class="bton-buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                    </section>  
+                </article>
+                <article class="flex_article2">
+                    <div class="flex_img2"><img src =/img/lentesdeportivo7.jpg alt="" class="ofertas_img"></div>
+                    <section class="botonydescripRecomend">
+                        <div class="descripRecomendado">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </div>
+                        <div class="bton-buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                    </section>  
+                </article>    
+                <article class="flex_article2">
+                    <div class="flex_img2"><img src =/img/lentesdeportivo4.jpg alt="" class="ofertas_img"></div>
+                    <section class="botonydescripRecomend">
+                        <div class="descripRecomendado">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </div>
+                        <div class="bton-buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                    </section>  
+                </article>
+                <article class="flex_article2">
+                    <div class="flex_img2"><img src =/img/lentesdeportivo8.jpg alt="" class="ofertas_img"></div>
+                    <section class="botonydescripRecomend">
+                        <div class="descripRecomendado">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </div>
+                        <div class="bton-buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                    </section>  
+                </article>    
+            
+            </section>
+       
+
+
+    </main>
+    
+<%- include('../partials/footer') -%>
+
+</body>
+</html>

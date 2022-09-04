@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const sequelize = require( '../Data/handlers/sequelize' );
+
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 //console.log(products);
@@ -12,10 +14,16 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 
     product: function(req,res){
-        res.render('products/product', { products, toThousand }
+        sequelize.findAll( 'Product', {
+         attributes: [ "id","name","price","image","discount","category_id"],
+         }).then( function( productdb ){
+           res.render( 'products/product', {productdb,products, toThousand} );
+         }).catch(function( error ){
+            console.log( error );
+        }); 
         
-        );
-       // console.log(products)
+     /*    res.render('products/product', { products, toThousand });
+       // console.log(products) */
     },
     create: function(req,res){
       				res.render('products/productCreate');

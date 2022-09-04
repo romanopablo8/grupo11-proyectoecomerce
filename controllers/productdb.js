@@ -130,6 +130,17 @@ list: function( req, res, next ) {
        });
                    
    },
+   detail2: function( req, res ) {
+    db.Product.findByPk(req.params.id, {include:[ models['color'],models['product_category']]}
+    
+  )
+   .then(Product => {
+ //   console.log(JSON.stringify(Product, null, 2));
+  
+    res.render( 'productsdb/productDetail2', {title: Product.name,Product} );
+   });
+               
+},
     buscar: (req, res) => {
         
         let nombre = req.body.name;

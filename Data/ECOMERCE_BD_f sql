@@ -1,0 +1,113 @@
+DROP DATABASE IF EXISTS ecomerce_db;
+CREATE DATABASE ecomerce_db;
+USE ecomerce_db;
+
+CREATE TABLE `User` (
+   `id` INT AUTO_INCREMENT,
+   `firstname` VARCHAR(255) NOT NULL,
+   `lastname` VARCHAR(255) NOT NULL,
+   `email` VARCHAR(255) NOT NULL,
+   `password` VARCHAR(255) NOT NULL,
+   `category_id` INT,
+   `foto_perfil` VARCHAR(255),
+   PRIMARY KEY (`id`),
+   
+   KEY `category_id` (`category_id`)
+);
+
+CREATE TABLE `product` (
+   `id` INT AUTO_INCREMENT,
+   `name` VARCHAR(255),
+   `descripcion` VARCHAR(255),
+   `category_id` INT,
+   `image`VARCHAR(255),
+   `color_id` INT,
+   `price` INT,
+   `discount` INT,
+   `reference` VARCHAR(255),
+   `descripcionfull` TEXT,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `color` (
+   `id` INT AUTO_INCREMENT,
+   `color` VARCHAR(255),
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `product_category` (
+   `id` INT AUTO_INCREMENT,
+   `category` VARCHAR(255),
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `user_category` (
+   `id` INT AUTO_INCREMENT,
+   `category` VARCHAR(255),
+   
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `cart` (
+   `id` INT AUTO_INCREMENT,
+   `user_id` INT,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `product_cart` (
+   `id` INT AUTO_INCREMENT,
+   `cart_id` INT,
+   `product_id` INT,
+   PRIMARY KEY (`id`)
+);
+
+
+ALTER TABLE `user` ADD CONSTRAINT `FK_7f4bb1ad-ef5c-4795-bd9a-caf893982f48` FOREIGN KEY (`category_id`) REFERENCES `user_category` (`id`);
+
+ALTER TABLE `cart` ADD CONSTRAINT `FK_05371955-0d4f-473e-a7f2-5effe462794f` FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)  ;
+
+ALTER TABLE `product_cart` ADD CONSTRAINT `FK_d0691060-9142-4b1f-aec5-3574a149b3f1` FOREIGN KEY (`cart_id`) REFERENCES `cart`(`id`)  ;
+
+ALTER TABLE `product_cart` ADD CONSTRAINT `FK_fe240a52-60d8-4eab-95da-593817366b86` FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)  ;
+
+ALTER TABLE `product` ADD CONSTRAINT `FK_5e5fc944-f6de-4fef-89e8-abed834456bf` FOREIGN KEY (`color_id`) REFERENCES `color`(`id`)  ;
+
+ALTER TABLE `product` ADD CONSTRAINT `FK_e7ed46e9-1815-40f7-ab1f-ceebbc29659d` FOREIGN KEY (`category_id`) REFERENCES `product_category`(`id`)  ;
+
+INSERT INTO `ecomerce_db`.`color` (`id`, `color`) VALUES ('1', 'black');
+INSERT INTO `ecomerce_db`.`color` (`id`, `color`) VALUES ('2', 'white');
+INSERT INTO `ecomerce_db`.`color` (`id`, `color`) VALUES ('3', 'red');
+INSERT INTO `ecomerce_db`.`color` (`id`, `color`) VALUES ('4', 'green');
+INSERT INTO `ecomerce_db`.`color` (`id`, `color`) VALUES ('5', 'yellow');
+INSERT INTO `ecomerce_db`.`color` (`id`, `color`) VALUES ('6', 'orange');
+
+INSERT INTO `ecomerce_db`.`product_category` (`id`, `category`) VALUES ('1', 'lentes Niños');
+INSERT INTO `ecomerce_db`.`product_category` (`id`, `category`) VALUES ('2', 'Gafas de Sol');
+INSERT INTO `ecomerce_db`.`product_category` (`id`, `category`) VALUES ('3', 'Lentes');
+INSERT INTO `ecomerce_db`.`product_category` (`id`, `category`) VALUES ('4', 'Deportivas');
+
+INSERT INTO `ecomerce_db`.`user_category` (`id`, `category`) VALUES ('1', 'usuario');
+INSERT INTO `ecomerce_db`.`user_category` (`id`, `category`) VALUES ('2', 'admin');
+INSERT INTO `ecomerce_db`.`user_category` (`id`, `category`) VALUES ('3', 'visitante');
+
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (1, 'Wrapsafe', 'turpis a pede posuere nonummy integer', 4, 'depochild22.jpg', 1, 2473, 0, '369-32-4252', 'quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (2, 'Cardguard', 'congue diam id ornare imperdiet', 1, 'depochild10.jpg', 1, 2335, 10, '258-62-5089', 'vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (3, 'Gembucket', 'nisl duis bibendum felis sed', 1, 'lentesdeportivo7.jpg', 4, 1533, 0, '710-11-5265', 'nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (4, 'Stronghold', 'sollicitudin mi sit amet lobortis sapien', 4, 'Lentes20.jpg', 1, 1838, 25, '776-58-0976', 'leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (5, 'Trippledex', 'curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus', 1, 'Lentes7.jpg', 5, 1547, 12, '189-85-2042', 'nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (6, 'Bitwolf', 'eros elementum pellentesque quisque porta', 4, 'lentesdeportivo3.jpg', 4, 1458, 28, '229-40-2564', 'elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (7, 'Zaam-Dox', 'aliquam convallis nunc proin at turpis a pede posuere', 1, 'depochild2.jpg', 5, 2630, 13, '821-80-2877', 'a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (8, 'Sub-Ex', 'vitae ipsum aliquam non mauris morbi non', 2, 'lentesvista10.jpg', 1, 1496, 8, '648-82-2893', 'ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (9, 'Tampflex', 'nibh quisque id justo sit', 4, 'lentesdeportivo6.jpg', 2, 1998, 23, '268-60-1902', 'nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus');
+insert into product (id, name, descripcion, category_id, image, color_id, price, discount, reference, descripcionfull) values (10, 'Fixflex', 'leo maecenas pulvinar lobortis est', 4, 'lentesdeportivo1.jpg', 4, 1071, 41, '161-91-6418', 'dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate');
+
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (1, 'Bigtax', 'Barbrook', 'cbarbrook0@ycombinator.com', 'm7XVWT', 2, 'lentesvista5.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (2, 'Tampflex', 'McColgan', 'smccolgan1@discovery.com', '0adaRIJjiQ', 3, 'depochild19.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (3, 'Namfix', 'Thurlbourne', 'jthurlbourne2@cnn.com', 'pxKGK9N', 1, 'lentesvista4.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (4, 'Otcom', 'Worsell', 'kworsell3@sohu.com', 'UEA0iH700', 1, 'lentesvista3.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (5, 'Sonair', 'Predohl', 'jpredohl4@miibeian.gov.cn', 'ICODFGVH2RW', 1, 'depochild14.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (6, 'Zontrax', 'Bastick', 'mbastick5@liveinternet.ru', 'NqEFqPhdV2', 3, 'lentesdeportivo13.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (7, 'Transcof', 'Sarjant', 'jsarjant6@vinaora.com', 'jR87FN', 2, 'depochild22.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (8, 'Domainer', 'Jordeson', 'kjordeson7@indiatimes.com', 'V4cRrO', 3, 'lentesdeportivo8.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (9, 'Prodder', 'Bushill', 'kbushill8@archive.org', 'VOdfsjN', 1, 'Lentes9.jpg');
+insert into user (id, firstname, lastname, email, password, category_id, foto_perfil) values (10, 'Flexidy', 'Durtnel', 'ddurtnel9@examiner.com', 'bJdvHNhujid', 3, 'lentesvista15.jpg');
