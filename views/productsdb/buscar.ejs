@@ -1,0 +1,42 @@
+<%- include('../partials/head') -%>
+    <body>
+     
+    <%- include('../partials/header2') -%>
+<main class="conteiner-products">
+
+    <section class="flex-offers">
+        <% for( let i = 0; i < productdb.length; i++ ){ %>
+            <article class="flex_article">
+                 
+                 <div >
+                    <a href="/prodb/detail2/<%=productdb[i].id%>">
+                    <figure class="flex_img" class="product-box_image">
+                    <img src="/img/img-products/<%=productdb[i].image%>" alt="imagen de producto db">
+                    </figure>
+                </div>
+                <!-- agregar css -->
+                    <article class="product-box_data">
+                    <h2><%= (productdb[i].price)%></h2>
+                   
+                    <span><%=productdb[i].discount%>% OFF</span>
+                    <p><%=productdb[i].name%></p>
+                    <i class="fas fa-truck"></i>
+                   
+                
+                    </a>
+                    </article>
+           
+            </article>
+            <% }%>
+        </section>
+
+    <section class="flex-offers">
+   <h1>
+       colocor cuando no hay coicidencias
+   </h1>
+    </section>
+</main>
+        
+<%- include('../partials/footer') -%>
+    </body>
+</html>

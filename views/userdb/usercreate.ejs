@@ -35,13 +35,17 @@
                                 value="<%= locals.oldData ? oldData.firstname : null %>">
                                 <% if (locals.errors && errors.firstname) { %>
                                     <div class="text-danger">
-                                        <%= errors.firstname.msg %> 
+                                      <h1>ffff</h1> <%= errors.firstname.msg %> 
                                     </div>
                                 <% } %>
+                                <div class="msgerror">
+                                    <!-- mensaje para mostrar si no pasa la validacion -->
+                                </div>
+
                         </div>
                     </div>
                     <div class="col-md-6 my-1">
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label><b>Apellido:</b></label>
                             <input 
                                 type="text" 
@@ -59,7 +63,7 @@
                     </div>
                     <div class="col-md-6 my-1">
                         <div class="form-group">
-                            <label><b>Usuario:</b></label>
+                            <label><b>Usuario:opcional</b></label>
                             <input 
                                 type="hidden"    
                                 name="user_name"
@@ -99,7 +103,7 @@
                                 name="category_id" 
                                 id="group__category_id"
                                 class="form-select <%= locals.errors && errors.category_id ? 'is-invalid' : null %>">
-                                <option value="" >Elegí una Categoria</option>
+                                <option selected disabled value="" >Elegí una Categoria</option>
                                
                                 <% allcate.forEach(cate => { %>
                                 <option 

@@ -14,8 +14,9 @@
               <li class="nav-item"><a class="nav-link" href="/products/lentes">lentes</a></li>
               <li class="nav-item"><a class="nav-link" href="/products/lenteschicos">lentes Niños</a></li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+            <form class="d-flex" role="search" action="/prodb/buscar" method="POST">
+              <input class="form-control me-2" type="search"  name="name" id="name" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success me-4"  type="submit">Search</button>
             </form>
             <ul class="navbar-nav align-items-center">

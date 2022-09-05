@@ -162,6 +162,37 @@ list: function( req, res, next ) {
                  // colocar no coinciden refrescar la pagina o un mensaje 0 coincidencias y boton de recarga o algo asi
       }
           });
+      },
+      buscar2: (req, res) => {
+        
+        let nombre = req.body.name;
+        //console.log(nombre);
+        
+        var condition = nombre ? {  [db.Sequelize.Op.like]: `%${nombre}%`  } : null;
+        console.log(condition);
+        db.Product.findAll({
+         //  where: {name:condition}
+           where: {
+            [Op.or]: [
+              {name:condition },
+              {descripcion:condition },
+              {price:condition },
+              {discount:condition },
+              {reference:condition },
+              {descripcionfull:condition },
+            ]
+          }
+          })          
+          .then(productdb => {
+              if (productdb.length > 0) {
+                          console.log(productdb);
+              //console.log(product[0].name);
+              res.render('productsdb/buscar', {productdb})    
+              }
+              else {
+                 // colocar no coinciden refrescar la pagina o un mensaje 0 coincidencias y boton de recarga o algo asi
+      }
+          });
       }
 
 }

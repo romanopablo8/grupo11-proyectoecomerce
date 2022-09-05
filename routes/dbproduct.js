@@ -12,7 +12,7 @@ router.post('/prodb/add', uploadFile.single('image'),validations, dbproductcontr
 /* PRODUCT list */
 router.get( '/prodb/productlist', dbproductcontroller.list );
 router.post( '/prodb/productlist', dbproductcontroller.buscar );
-
+router.post( '/prodb/buscar', dbproductcontroller.buscar2 );
 /* PRODUCT details */
 router.get( '/prodb/detail/:id', dbproductcontroller.detail );
 

@@ -22,7 +22,7 @@
                                 type="text" 
                                 name="name"
                                 placeholder="Ingresa el nombre" 
-                                
+                                id="group__name"
                                 class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.name : null %>">
                                 <% if (locals.errors && errors.name) { %>
@@ -38,7 +38,8 @@
                             <input 
                                 type="text" 
                                 name="descripcion"
-                                placeholder="Ingresa la descripcion" 
+                                placeholder="Ingresa la descripcion"
+                                id="group__descripcion" 
                                 class="form-control <%= locals.errors && errors.descripcion ? 'is-invalid' : null %>" 
                                 value="<%= locals.oldData ? oldData.descripcion : null %>">
                                 <% if (locals.errors && errors.descripcion) { %>
@@ -53,9 +54,10 @@
                             <label><b>Categoría</b></label>
                             <select 
                             name="category_id" 
+                            id="group__category_id"
                             class="form-select <%= locals.errors && errors.category_id ? 'is-invalid' : null %>"
-                        >
-                            <option value="">Elegí una categoria</option>
+                             >
+                            <option selected disabled value="">Elegí una categoria</option>
                                
                             <% allcate.forEach(cate => { %>
                                 <option 
@@ -80,6 +82,7 @@
                             <input 
                                 type="file" 
                                 name="image"
+                                id="group__image"
                                 class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>"
                             >
                             <% if (locals.errors && errors.image) { %>
@@ -93,9 +96,10 @@
                         <div class="form-group">
                             <label><b>Color:</b></label>
                             <select 
-                                name="color_id" 
+                                name="color_id"
+                                id="group__color_id"
                                 class="form-select <%= locals.errors && errors.colors ? 'is-invalid' : null %>">
-                                <option value="">Elegí un Color</option>
+                                <option selected disabled value="">Elegí un Color</option>
 
                                 <% allcolor.forEach(colores => { %>
                                     <option 
@@ -119,6 +123,7 @@
                             <input 
                                 type="number" 
                                 name="price" 
+                                id="group__price"
                                 placeholder="Ingresa el precio" 
                                 class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.price : null %>"
@@ -135,7 +140,8 @@
                             <label><b>Descuento</b></label>
                             <input 
                                 type="number" 
-                                name="discount" 
+                                name="discount"
+                                id="group__discount" 
                                 placeholder="Ingresa el descuento" 
                                 class="form-control <%= locals.errors && errors.discount ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.discount : null %>"
@@ -153,6 +159,7 @@
                             <input 
                                 type="text" 
                                 name="reference" 
+                                id="group__reference" 
                                 placeholder="583-73-0511" 
                                 class="form-control <%= locals.errors && errors.reference ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.reference : null %>"
@@ -169,6 +176,7 @@
                             <label><b>descripcion Completa</b></label>
                             <textarea 
                                 
+                            id="group__descripcionfull" 
                                 
                                 rows="10" cols="30"
                                 name="descripcionfull" 

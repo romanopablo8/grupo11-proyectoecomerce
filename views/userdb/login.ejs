@@ -13,7 +13,7 @@
 						<div class="col-md-6 my-2">
 							<div class="form-group">
 								<label><b>Correo electrónico:</b></label>
-								<input type="text" name="email" id="email" placeholder="Ingresa Correo electrónico" class="form-control">
+								<input type="text" name="email" id="group__email" placeholder="Ingresa Correo electrónico" class="form-control">
 								<% if (locals.errors && errors.email) { %>
 									<div class="text-danger">
 										<%= errors.email.msg %>
@@ -24,7 +24,7 @@
 						<div class="col-md-6 my-2">
 							<div class="form-group">
 								<label><b>Password:</b></label>
-								<input type="password" name="password" id="password" class="form-control">
+								<input type="password" name="password" id="group__password" class="form-control">
 								<div class="invalid-feedback">
 								</div>
                                 <% if (locals.errors && errors.password) { %>
