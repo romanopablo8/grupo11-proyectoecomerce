@@ -96,7 +96,7 @@ const dbusercontroller = {
     Promise
     .all([promuser, promcate, promemail])
     .then(([alluser, allcate,onemail]) => {
-      if (onemail) {
+      if (onemail ) {
         return res.render('userdb/usercreate', {alluser, allcate,
           errors: {
               email: {
@@ -106,7 +106,7 @@ const dbusercontroller = {
           oldData: req.body
       });
       }
-      if (resultValidation.errors.length > 0) {
+      else if (resultValidation.errors.length > 0) {
        
 //	console.log(allcate);
         return res.render('userdb/usercreate', {alluser, allcate,
@@ -114,23 +114,24 @@ const dbusercontroller = {
     oldData: req.body,allcate
   })
   }
- 
-    }).then(()=> {
-      db.User.create({
+ else {
+
+  db.User.create({
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         email: req.body.email,
         password: bcryptjs.hashSync(req.body.password, 10),
         category_id: req.body.category_id,
         foto_perfil:  req.file.filename ? req.file.filename : 'default.png'//req.file.filename,
-  })   
-       
-        
-    }).then(()=> {
+  }).then(()=> {
         return res.redirect('/db/userlist')
         
     })            
     .catch(error => console.log(error))
+ }
+})
+    
+      
   
 },
 login: function( req, res ) {

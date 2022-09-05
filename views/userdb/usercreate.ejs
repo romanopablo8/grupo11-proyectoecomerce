@@ -35,13 +35,14 @@
                                 value="<%= locals.oldData ? oldData.firstname : null %>">
                                 <% if (locals.errors && errors.firstname) { %>
                                     <div class="text-danger">
-                                      <h1>ffff</h1> <%= errors.firstname.msg %> 
+                                      <%= errors.firstname.msg %> 
                                     </div>
                                 <% } %>
-                                <div class="msgerror">
+                                <div id="error" class="alert alert-danger ocultar" role="alert">
                                     <!-- mensaje para mostrar si no pasa la validacion -->
+                                    nombre mas de dos caracteres
                                 </div>
-
+ 
                         </div>
                     </div>
                     <div class="col-md-6 my-1">
