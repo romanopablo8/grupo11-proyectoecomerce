@@ -61,12 +61,15 @@ const validarCampo = (expresion, input, campo ) => {
     if(expresion.test(input.value)){
         document.getElementById(`group__${campo}`).classList.remove('is-invalid')
         document.getElementById(`group__${campo}`).classList.add('is-valid')
-    //    document.querySelector(`#group__${campo} i`).classList.add('fa-check-circle')
+        document.querySelector(`#group__${campo}-error`).classList.remove('mostrar')
+        document.querySelector(`#group__${campo}-error`).classList.add('ocultar')
     //    document.querySelector(`#group__${campo} i`).classList.remove('fa-times-circle')
         campos[campo] = true;
     } else {
         document.getElementById(`group__${campo}`).classList.add('is-invalid')
         document.getElementById(`group__${campo}`).classList.remove('is-valid')
+        document.querySelector(`#group__${campo}-error`).classList.remove('ocultar')
+        document.querySelector(`#group__${campo}-error`).classList.add('mostrar')
    //     document.querySelector(`#group__${campo} i`).classList.add('fa-times-circle')
    //     document.querySelector(`#group__${campo} i`).classList.remove('fa-check-circle') 
         campos[campo] = false;               
@@ -81,12 +84,18 @@ const validarPw = () => {
         
         document.getElementById('group__password').classList.add('is-invalid')
         document.getElementById('group__password').classList.remove('is-valid')
+        document.getElementById("error").classList.add("mostrar");
+        document.getElementById("ok").classList.add("ocultar");
      //   document.querySelector(`#group__password i`).classList.add('fa-times-circle')
      //   document.querySelector(`#group__password i`).classList.remove('fa-check-circle') 
         campos['password'] = false;        
     } else {
         document.getElementById('group__password').classList.remove('is-invalid')
         document.getElementById('group__password').classList.add('is-valid')
+        
+        document.getElementById("error").classList.remove("mostrar");
+      // Mostramos un mensaje mencionando que las Contraseñas coinciden 
+        document.getElementById("ok").classList.remove("ocultar");
     //    document.querySelector(`#group__password i`).classList.remove('fa-times-circle')
     //    document.querySelector(`#group__password i`).classList.add('fa-check-circle')   
         campos['password'] = true;    
@@ -98,12 +107,14 @@ const validarCategoria = () => {
     if (categoria.value == 0 || categoria.value== ""){
         document.getElementById('group__category_id').classList.add('is-invalid')
         document.getElementById('group__category_id').classList.remove('is-valid')
-      
+        document.querySelector('#group__category_id-error').classList.remove('ocultar')
+        document.querySelector('#group__category_id-error').classList.add('mostrar')
         campos['category_id'] = false;        
     } else {
         document.getElementById('group__category_id').classList.remove('is-invalid')
         document.getElementById('group__category_id').classList.add('is-valid')
-    
+        document.querySelector('#group__category_id-error').classList.remove('mostrar')
+        document.querySelector('#group__category_id-error').classList.add('ocultar')
         campos['category_id'] = true;    
    
     }

@@ -1,14 +1,4 @@
 <%- include('../partials/head') -%>
-<!-- validar contraseña display -->
-<style type="text/css">
-    .ocultar {
-        display: none;
-    }
-
-    .mostrar {
-        display: block;
-    }
-</style>
 
     <body>
          
@@ -38,9 +28,9 @@
                                       <%= errors.firstname.msg %> 
                                     </div>
                                 <% } %>
-                                <div id="error" class="alert alert-danger ocultar" role="alert">
+                                <div id="group__firstname-error" class="text-danger ocultar" >
                                     <!-- mensaje para mostrar si no pasa la validacion -->
-                                    nombre mas de dos caracteres
+                                     Más de dos caracteres
                                 </div>
  
                         </div>
@@ -59,7 +49,11 @@
                                     <div class="text-danger">
                                         <%= errors.lastname.msg %> 
                                     </div>
-                                <% } %>            
+                                <% } %> 
+                                <div id="group__lastname-error" class="text-danger ocultar" >
+                                    <!-- mensaje para mostrar si no pasa la validacion -->
+                                     Más de dos caracteres
+                                </div>           
                         </div>
                     </div>
                     <div class="col-md-6 my-1">
@@ -76,7 +70,11 @@
                                     <div class="text-danger">
                                         <%= errors.user_name.msg %> 
                                     </div>
-                                <% } %>            
+                                <% } %> 
+                                <div id="group__user_name-error" class="text-danger ocultar" >
+                                    <!-- mensaje para mostrar si no pasa la validacion -->
+                                     Más de dos caracteres
+                                </div>            
                         </div>
                     </div>                              
                     <div class="col-md-6 my-1">
@@ -95,6 +93,10 @@
                                     <%= errors.email.msg %>
                                 </div>
                             <% } %>
+                            <div id="group__email-error" class="text-danger ocultar" >
+                                <!-- mensaje para mostrar si no pasa la validacion -->
+                                 Correo invalido
+                            </div>
                         </div>
                     </div>
                  <div class="col-md-6 my-1">
@@ -120,6 +122,10 @@
                                     <%= errors.category_id.msg %>
                                 </div>
                             <% } %>
+                            <div id="group__category_id-error" class="text-danger ocultar" >
+                                <!-- mensaje para mostrar si no pasa la validacion -->
+                                 Elige una categoria
+                            </div>
                         </div>
                     </div>                         
                     <div class="col-md-6 my-1">
@@ -136,6 +142,10 @@
                                     <%= errors.foto_perfil.msg %>
                                 </div>
                             <% } %>
+                            <div id="group__foto_perfil-error" class="text-danger ocultar" >
+                                <!-- mensaje para mostrar si no pasa la validacion -->
+                                 Cargar imagen valida
+                            </div>
                         </div>
                     </div> 
                     <div class="col-md-6 my-1">
@@ -153,6 +163,10 @@
                                         <%= errors.password1.msg %>
                                     </div>
                                 <% } %>
+                                <div id="group__password1-error" class="text-danger ocultar" >
+                                    <!-- mensaje para mostrar si no pasa la validacion -->
+                                     min 8 caracteres Mayuscula,numero y caracter especial
+                                </div>
                         </div>
                     </div>                  
                     <div class="col-md-6 my-1">
@@ -175,7 +189,7 @@
             Las Contraseñas no coinciden, vuelve a intentar !
         </div>
         <div id="ok" class="alert alert-success ocultar" role="alert">
-            Las Contraseñas coinciden ! (Procesando formulario ... )
+            Las Contraseñas coinciden ! (Procesar el formulario ... )
         </div>
         <!-- Fin Mensajes de Verificación -->
                     </div>

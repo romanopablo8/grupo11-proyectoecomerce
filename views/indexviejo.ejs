@@ -15,9 +15,9 @@
               <img src="img\banner.jpg" class="bd-placeholder-img" width="100%" height="100%" alt="...">
               <div class="container">
                 <div class="carousel-caption text-start">
-                  <h1>Guado store.</h1>
-                  <p>Puede registrarse en nuestra tienda.</p>
-                  <p><a class="btn btn-lg btn-primary" href="/db/login">Registrese hoy</a></p>
+                  <h1>Example headline.</h1>
+                  <p>Some representative placeholder content for the first slide of the carousel.</p>
+                  <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
                 </div>
               </div>
             </div>
@@ -25,9 +25,9 @@
               <img src="img\banner.jpg" class="bd-placeholder-img" width="100%" height="100%" alt="...">
               <div class="container">
                 <div class="carousel-caption">
-                  <h1>lentes deportivos.</h1>
-                  <p>conozca nuestros lentes deportivos.</p>
-                  <p><a class="btn btn-lg btn-primary" href="http://localhost:3000/products">Descubrelo</a></p>
+                  <h1>Another example headline.</h1>
+                  <p>Some representative placeholder content for the second slide of the carousel.</p>
+                  <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
                 </div>
               </div>
             </div>
@@ -35,9 +35,9 @@
               <img src="img\banner.jpg" class="bd-placeholder-img" width="100%" height="100%" alt="...">
               <div class="container">
                 <div class="carousel-caption text-end">
-                  <h1>Nuestos lentes para niños.</h1>
-                  <p>recomendados para los chicos que necesitan gafas formuladas.</p>
-                  <p><a class="btn btn-lg btn-primary" href="products/lenteschicos">Galeria</a></p>
+                  <h1>One more for good measure.</h1>
+                  <p>Some representative placeholder content for the third slide of this carousel.</p>
+                  <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
                 </div>
               </div>
             </div>
@@ -50,36 +50,55 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
-        </div> 
-  
+        </div>     
+    
     </section>
         <main class="conteiner-products">
             <div ><h3 class="mainOffers">Ofertas</h3></div>
             <section class="flex-offers">
-              <% for( let i = 0; i < productdb.length; i++ ){ %>
-                  <article class="flex_article">
-                       
-                       <div >
-                          <a href="/prodb/detail2/<%=productdb[i].id%>">
-                          <figure class="flex_img" class="product-box_image">
-                          <img src="/img/img-products/<%=productdb[i].image%>" alt="imagen de producto db">
-                          </figure>
-                      </div>
-                      <!-- agregar css -->
-                          <article class="product-box_data">
-                          <h2><%= (productdb[i].price)%></h2>
-                         
-                          <span><%=productdb[i].discount%>% OFF</span>
-                          <p><%=productdb[i].name%></p>
-                          <i class="fas fa-truck"></i>
-                         
-                      
-                          </a>
-                          </article>
-                 
-                  </article>
-                  <% }%>
-              </section> 
+                <article class="flex_article">
+                    <div>
+                    <p class="price">$70.500</p>
+                    <p class="offers">10% OFF</p>
+                    </div>
+                    <div class="flex_img"><img src =img/Lentes32.jpg alt="" class="ofertas_img"></div>
+                    <div class="flex_buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                    <div class="flex_detalis"><input type="button" name="esp_" value="Especificaciones"></i></div>
+                   
+                </article>
+                <article class="flex_article">
+                    <div>
+                    <p class="price">$70.500</p>
+                    <p class="offers">10% OFF</p>
+                    </div>
+                    <div class="flex_img"><img src =img/Lentes31.jpg alt="" class="ofertas_img"></div>
+                    <div class="flex_buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                    <div class="flex_detalis"><input type="button" name="esp_" value="Especificaciones"></i></div>
+                   
+                </article>
+                <article class="flex_article">
+                    <div>
+                    <p class="price">$70.500</p>
+                    <p class="offers">10% OFF</p>
+                    </div>
+                    <div class="flex_img"><img src =img/Lentes30.jpg alt="" class="ofertas_img"></div>
+                    <div class="flex_buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                    <div class="flex_detalis"><input type="button" name="esp_" value="Especificaciones"></i></div>
+                   
+                </article>
+                <article class="flex_article">
+                    <div>
+                    <p class="price">$70.500</p>
+                    <p class="offers">10% OFF</p>
+                    </div>
+                    <div class="flex_img"><img src =img/Lentes29.jpg alt="" class="ofertas_img"></div>
+                    <div class="flex_buy"> <input type="button" name="com_" value="Comprar"></i></div>
+                    <div class="flex_detalis"><input type="button" name="esp_" value="Especificaciones"></i></div>
+                   
+                </article>
+                
+
+            </section>   
             <div><h3 class="mainProduct">Productos</h3></div>
             <section>
                 <section class="flex-offers">
