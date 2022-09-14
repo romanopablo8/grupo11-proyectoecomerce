@@ -98,8 +98,25 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: linear-gradient(135deg, #8ac7f0, #bb83d1);
 }
+.asd {
+  height: 20%;
+  width: auto;
+  color: #fff;
+  border: 1px solid black;
+  border-color: black 1px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+  
 
+}
+.asd:hover{
+  background: linear-gradient(135deg, #bb83d1, #8ac7f0 );
+
+}
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -3940,7 +3957,9 @@ textarea.form-control-lg {
 .tab-content > .active {
   display: block;
 }
-
+.buscar-titulo{
+   text-align: center;
+}
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
