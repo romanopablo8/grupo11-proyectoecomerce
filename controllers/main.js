@@ -1,4 +1,4 @@
-const sequelize = require( '../Data/handlers/sequelize' );
+const sequelize = require ( '../Data/handlers/sequelize' );
 
 
 const controller = {
@@ -13,7 +13,19 @@ const controller = {
            }); 
 
        // res.render( 'index' );
-    }
+    },
+
+   nosotros: function ( req, res ) {
+     res.render ("nosotros")
+   },
+
+   colecciones: function ( req, res ) {
+    res.render ("colecciones")
+  },
+  
+  contactenos: function ( req, res ) {
+    res.render ("contactenos")
+  }
 }
 
 module.exports = controller;
