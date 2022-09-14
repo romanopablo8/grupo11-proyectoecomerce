@@ -19,6 +19,10 @@
 										<%= errors.email.msg %>
 									</div>
 								<% } %>
+								<div id="group__email-error" class="text-danger ocultar" >
+									<!-- mensaje para mostrar si no pasa la validacion -->
+									 Correo invalido
+								</div>
 							</div>
 						</div>
 						<div class="col-md-6 my-2">
@@ -32,6 +36,10 @@
                                         <%= errors.password.msg %>
                                     </div>
                                 <% } %> 
+								<div id="group__password-error" class="text-danger ocultar" >
+                                    <!-- mensaje para mostrar si no pasa la validacion -->
+                                     min 8 caracteres Mayuscula,numero y caracter especial
+                                </div>	
 							</div>
 						</div>
 						<div class="col-md-6 my-2">

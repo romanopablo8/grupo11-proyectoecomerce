@@ -6,7 +6,7 @@ const textareas= document.querySelectorAll('#formulario textarea');
 
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	nombre: /^[a-zA-ZÀ-ÿ\s]{5,20}$/, // Letras y espacios, pueden llevar acentos.
     descripcion:/^[a-zA-ZÀ-ÿ\s]{20,25}$/, // Letras y espacios, pueden llevar acentos +20.
 	reference:/^[0-9\-]{4,16}$/, //  numeros y guion  
     password: /^.{4,12}$/, // 4 a 12 digitos.
@@ -67,14 +67,14 @@ const validarCampo = (expresion, input, campo ) => {
     if(expresion.test(input.value)){
         document.getElementById(`group__${campo}`).classList.remove('is-invalid')
         document.getElementById(`group__${campo}`).classList.add('is-valid')
-      /*   document.querySelector(`#group__${campo} i`).classList.add('fa-check-circle')
-        document.querySelector(`#group__${campo} i`).classList.remove('fa-times-circle') */
+        document.querySelector(`#group__${campo}-error`).classList.remove('mostrar')
+        document.querySelector(`#group__${campo}-error`).classList.add('ocultar')
         campos[campo] = true;
     } else {
         document.getElementById(`group__${campo}`).classList.add('is-invalid')
         document.getElementById(`group__${campo}`).classList.remove('is-valid')
-    /*     document.querySelector(`#group__${campo} i`).classList.add('fa-times-circle')
-        document.querySelector(`#group__${campo} i`).classList.remove('fa-check-circle')  */
+        document.querySelector(`#group__${campo}-error`).classList.remove('ocultar')
+        document.querySelector(`#group__${campo}-error`).classList.add('mostrar')
         campos[campo] = false;               
     }
 }
@@ -83,12 +83,14 @@ const validarCategoria = () => {
     if (categoria.value == 0 || categoria.value== ""){
         document.getElementById('group__category_id').classList.add('is-invalid')
         document.getElementById('group__category_id').classList.remove('is-valid')
-      
+        document.querySelector('#group__category_id-error').classList.remove('ocultar')
+        document.querySelector('#group__category_id-error').classList.add('mostrar')
         campos['category_id'] = false;        
     } else {
         document.getElementById('group__category_id').classList.remove('is-invalid')
         document.getElementById('group__category_id').classList.add('is-valid')
-    
+        document.querySelector('#group__category_id-error').classList.remove('mostrar')
+        document.querySelector('#group__category_id-error').classList.add('ocultar')
         campos['category_id'] = true;    
    
 
@@ -101,12 +103,14 @@ const validarColor = (input, campo) => {
     if (categoria.value == 0 || categoria.value== ""){
         document.getElementById('group__color_id').classList.add('is-invalid')
         document.getElementById('group__color_id').classList.remove('is-valid')
-      
+        document.querySelector('#group__color_id-error').classList.remove('ocultar')
+        document.querySelector('#group__color_id-error').classList.add('mostrar')
         campos['color_id'] = false;        
     } else {
         document.getElementById('group__color_id').classList.remove('is-invalid')
         document.getElementById('group__color_id').classList.add('is-valid')
-    
+        document.querySelector('#group__color_id-error').classList.remove('mostrar')
+        document.querySelector('#group__color_id-error').classList.add('ocultar')
         campos['color_id'] = true;    
     }
 

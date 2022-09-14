@@ -30,6 +30,10 @@
                                         <%= errors.name.msg %> 
                                     </div>
                                 <% } %>
+                                <div id="group__name-error" class="text-danger ocultar" >
+                                    <!-- mensaje para mostrar si no pasa la validacion -->
+                                     nombre invalido
+                                </div>
                         </div>
                     </div>
                     <div class="col-md-12 my-1">
@@ -46,7 +50,11 @@
                                     <div class="text-danger">
                                         <%= errors.descripcion.msg %> 
                                     </div>
-                                <% } %>            
+                                <% } %> 
+                                <div id="group__descripcion-error" class="text-danger ocultar" >
+                                    <!-- mensaje para mostrar si no pasa la validacion -->
+                                     minimo 20 caracteres
+                                </div>           
                         </div>
                     </div>
                     <div class="col-md-12 my-1">
@@ -90,6 +98,11 @@
                                     <%= errors.image.msg %>
                                 </div>
                             <% } %>
+                            <div id="group__image-error" class="text-danger ocultar" >
+                                <!-- mensaje para mostrar si no pasa la validacion -->
+                                Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+                            </div> 
+                           
                         </div>
                     </div>                                                  
                     <div class="col-md-12 my-1">
@@ -205,6 +218,6 @@
         </div>
     </div>
 </div>
-        <script src="/js/validation-products.js"></script>
+         <script src="/js/validation-products.js"></script>
         <%- include('../partials/footer') -%>
     </body>

@@ -36,12 +36,16 @@ const validarCampo = (expresion, input, campo ) => {
     if(expresion.test(input.value)){
         document.getElementById(`group__${campo}`).classList.remove('is-invalid')
         document.getElementById(`group__${campo}`).classList.add('is-valid')
+        document.querySelector(`#group__${campo}-error`).classList.remove('mostrar')
+        document.querySelector(`#group__${campo}-error`).classList.add('ocultar')
     //    document.querySelector(`#group__${campo} i`).classList.add('fa-check-circle')
     //    document.querySelector(`#group__${campo} i`).classList.remove('fa-times-circle')
         campos[campo] = true;
     } else {
         document.getElementById(`group__${campo}`).classList.add('is-invalid')
         document.getElementById(`group__${campo}`).classList.remove('is-valid')
+        document.querySelector(`#group__${campo}-error`).classList.remove('ocultar')
+        document.querySelector(`#group__${campo}-error`).classList.add('mostrar')    
    //     document.querySelector(`#group__${campo} i`).classList.add('fa-times-circle')
    //     document.querySelector(`#group__${campo} i`).classList.remove('fa-check-circle')
         campos[campo] = false;               
