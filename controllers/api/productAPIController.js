@@ -14,10 +14,27 @@ const productAPIController = {
       
 
         .then(Products => {
+           // console.log(Products),
+         
             let list =[];
-           
+           let uno=0;
+           let dos=0;
+           let tres=0;
+           let cuatro=0;
             Products.forEach(Product => {
-                
+                if(Product.category_id ===1){
+                uno++;
+                }
+                if(Product.category_id ===2){
+                   dos++;
+                 }
+                if(Product.category_id ===3){
+                    tres++;
+                  }
+                if(Product.category_id ===4){
+                    cuatro++;
+                  }
+               // console.log(uno,dos,tres,cuatro) 
                 let prod ={};
                
                 prod['id'] = Product.id
@@ -45,10 +62,10 @@ const productAPIController = {
                  data:{
                      count:Products.length,
                      countByCategory:{
-                        chicos:1,
-                        GafasdeSol:2,
-                        lentes:3,
-                        Deportivas:4,
+                        chicos:uno,
+                        GafasdeSol:dos,
+                        lentes:tres,
+                        Deportivas:cuatro,
                     }
                      ,
                      products:list,
