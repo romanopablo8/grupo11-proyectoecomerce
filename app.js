@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride =  require('method-override'); 
+
+const apiUserssRouter = require('./routes/api/users');
+const apiProductRouter = require('./routes/api/products');
 // controllers require
 const dbproduct = require('./routes/dbproduct');
 const dbuser = require('./routes/dbuser');
@@ -28,6 +31,16 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
+app.use( ( req, res, next ) => {
+
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  next();
+
+});
+
 app.use(session({
 	secret: "frase secreta",
 	resave: false,
@@ -48,6 +61,9 @@ app.use('/', dbuser);
 app.use('/', index);
 app.use('/', user);
 app.use('/', product);
+
+app.use('/api/users',apiUserssRouter);
+app.use('/api/products',apiProductRouter);
 
 /* app.use((err, req, res, next) => {
   
