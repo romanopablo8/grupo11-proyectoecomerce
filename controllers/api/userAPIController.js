@@ -18,10 +18,7 @@ users.forEach(user => {
     usuario['detail'] = `api/users/${user.id}`
     list.push(usuario)
 
-   
-    
-
-});
+ });
             let respuesta = {
                 meta: {
                     status : 200,
@@ -32,6 +29,7 @@ users.forEach(user => {
                      list:list
                 },
                 users 
+            
             }
                 res.json(respuesta);
         });
@@ -52,7 +50,7 @@ users.forEach(user => {
                   firstname: user.firstname,
                   lastname: user.lastname,
                   email: user.email,
-                  foto_perfil: user.foto_perfil,
+                  foto_perfil:`http://localhost:3000/img/users/${user.foto_perfil}`,
                   url: `api/users/${user.id}`
                  
             } 
@@ -61,16 +59,13 @@ users.forEach(user => {
        });
                    
    },
-   detail2: async() => {
+   detail2: async(req,res) => {
 
     try {
 
         let resrespuesta  = await   db.User.findByPk(1, {attributes: ["id", "firstname", "lastname","email", "foto_perfil"]}
         )
-       /*  let respuesta =await resrespuesta.json()
-             console.log(respuesta ) */
-         return   await res.json(resrespuesta )
-        
+        res.json(resrespuesta  ) 
     }
     catch( err ) {
 

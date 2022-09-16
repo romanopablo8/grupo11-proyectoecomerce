@@ -96,7 +96,7 @@ const productAPIController = {
                     name: Product.name,
                     descripcion:Product.descripcion,
                     category: Product.product_category,
-                    image:Product.image,
+                    image:`http://localhost:3000/img/img-products/${Product.image}`,
                     color:Product.color,
                     price: Product.price,
                     discount:Product.discount,
