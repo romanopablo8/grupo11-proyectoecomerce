@@ -23,9 +23,32 @@ const controller = {
     res.render ("colecciones")
   },
   
-  contactenos: function ( req, res ) {
-    res.render ("contactenos")
+  contacto: function ( req, res ) {
+    res.render ("contacto")
+  },
+
+  garantia: function ( req, res ) {
+    res.render ("garantia")
+  },
+
+  face: function ( req, res ) {
+    res.render ("redessociales")
+  },
+
+  ig: function ( req, res ) {
+    res.render ("redessociales")
+  },
+
+
+  wp: function ( req, res ) {
+    res.render ("redessociales")
+  },
+  
+  youtube: function ( req, res ) {
+    res.render ("redessociales")
   }
+
+
 }
 
 module.exports = controller;
