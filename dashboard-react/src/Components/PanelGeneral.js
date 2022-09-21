@@ -10,7 +10,8 @@ function PanelGeneral () {
             <div className='total-usuarios'>
 
                 <div className='total-categorias'>
-
+                  
+                
                 </div>
             </div>
         </div>
