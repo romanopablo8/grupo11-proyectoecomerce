@@ -1,0 +1,5 @@
+.contenedor-principal {
+    border: solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
