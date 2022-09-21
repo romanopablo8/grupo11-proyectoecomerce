@@ -1,9 +1,9 @@
 import './App.css';
 import '../src/assets/componentes.css';
-import ListadoProductos from './componentes/ListadoProductos';
-import PanelCategorias from './componentes/PanelCategorias';
-import PanelDetalle from './componentes/PanelDetalle';
-import PanelGeneral from './componentes/PanelGeneral';
+import ListadoProductos from './Components/ListadoProductos';
+import PanelCategorias from './Components/PanelCategorias';
+import PanelDetalle from './Components/PanelDetalle';
+import PanelGeneral from './Components/PanelGeneral';
 
 function App() {
   return (
