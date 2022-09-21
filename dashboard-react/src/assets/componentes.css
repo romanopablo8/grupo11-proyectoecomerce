@@ -1,5 +1,9 @@
 .contenedor-principal {
     border: solid black;
+    width: 30%;
+    height: 50px;
+    padding: 50px 20px 10px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
 }
