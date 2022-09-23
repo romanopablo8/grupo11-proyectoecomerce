@@ -3,7 +3,12 @@
      
     <%- include('../partials/header2') -%>
 <main class="conteiner-products">
-
+  <!-- Mensajes de Verificación -->
+  <% if( productdb.length == 0 ){ %>
+    <div id="error" class="alert alert-danger mostrar" role="alert">
+      La palabra de busqueda no coincide, vuelve a intentar !
+  </div>
+  <% }%>
     <section class="flex-offers">
         <% for( let i = 0; i < productdb.length; i++ ){ %>
             <article class="flex_article">
@@ -31,12 +36,10 @@
         </section>
 
     <section class="flex-offers">
-   <h1>
-       colocor cuando no hay coicidencias
-   </h1>
+  
     </section>
 </main>
-        
+<script src="/js/coincide.js"></script>    
 <%- include('../partials/footer') -%>
     </body>
 </html>

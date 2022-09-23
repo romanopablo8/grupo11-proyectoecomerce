@@ -190,6 +190,8 @@ list: function( req, res, next ) {
               res.render('productsdb/buscar', {productdb})    
               }
               else {
+                 productdb 
+                res.render('productsdb/buscar', {productdb})   
                  // colocar no coinciden refrescar la pagina o un mensaje 0 coincidencias y boton de recarga o algo asi
       }
           });

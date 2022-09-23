@@ -44,7 +44,7 @@ const validarFormulario = (e) => {
             validarCampo(expresiones.foto_perfil, e.target, e.target.name);
         break;
          case "category_id":
-               console.log(e)
+             //  console.log(e)
                validarCategoria(e.target, e.target.name);
          break;
         case "password1":

@@ -62,7 +62,7 @@ const validarFormulario = (e) => {
         break;
     }
 }
-
+console.log(campos )
 const validarCampo = (expresion, input, campo ) => {
     if(expresion.test(input.value)){
         document.getElementById(`group__${campo}`).classList.remove('is-invalid')
@@ -135,10 +135,13 @@ textareas.forEach((textarea) => {
 })
 
 formulario.addEventListener('submit', (e) => {
+   
     e.preventDefault();
+    
     //const terminos = document.getElementById('terminos') terminos.check en el if para validar terminos y condiciones
     if (campos.name && campos.descripcion && campos.image && campos.category_id && campos.color_id && campos.price && campos.discount && campos.descripcionfull ){
         //formulario.reset()
+       
         formulario.submit()
     }
 })

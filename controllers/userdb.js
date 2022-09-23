@@ -124,7 +124,7 @@ const dbusercontroller = {
         category_id: req.body.category_id,
         foto_perfil:  req.file.filename ? req.file.filename : 'default.png'//req.file.filename,
   }).then(()=> {
-        return res.redirect('/db/userlist')
+        return res.redirect('/db/login')
         
     })            
     .catch(error => console.log(error))
