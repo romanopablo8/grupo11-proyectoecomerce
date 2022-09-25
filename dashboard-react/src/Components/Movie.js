@@ -25,12 +25,13 @@ class MoviesList extends Component {
 	  
 	
 		render () {
+			
 		  return (
 			
 		  <React.Fragment>
 			    {/*<!-- PRODUCTS LIST -->*/}
 				 {/*<!- Categories in DB ->*/ }
-				<h1 className="h3 mb-2 text-gray-800">All the movies in the Database</h1>
+				<h1 className="h3 mb-2 text-gray-800"> Todos los productos de la base de datos</h1>
 					
 		 
 		  <div className="card shadow mb-4">
@@ -40,19 +41,30 @@ class MoviesList extends Component {
 							<thead>
 							<tr>
 <th>id</th>
-<th>title</th>
-<th>rating</th>
-<th>awards</th>
-<th>length</th>
+<th>Nombre</th>
+<th>Descripcion</th>
+<th>Categoria</th>
+<th>url</th>
 </tr>
+</thead>
+<tfoot>
+<tr>
+<th>id</th>
+<th>Nombre</th>
+<th>Descripcion</th>
+<th>Categoria</th>
+<th>url</th>
+</tr>
+</tfoot>
+<tbody>
 								{
 								this.state.movList.map( ( movie , i) => {
 									return <MovieList { ...movie} key={i}/>
 								})
 								}
-									
+</tbody>									
 								
-							</thead>
+							
 							
 							
 						</table>

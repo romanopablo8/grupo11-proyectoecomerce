@@ -3,6 +3,22 @@ const db = require("../../Data/models");
 const models = require( '../../Data/handlers/associations' );
 
 const productAPIController = {
+    categorytotal:(req, res) => {
+        
+        db.product_category.findAll()
+        .then(total => { 
+        
+        let respuesta = {
+            meta: {
+                status : 200,
+                total: total.length,
+                url: 'api/products/total',
+                }, 
+           
+       }
+            res.json(respuesta);
+    })
+    },
  
     'list': (req, res) => {
        /*  const uno = db.Product.findAll({ where: {category_id:{ [db.Sequelize.Op.like]: "1"}}});
@@ -21,7 +37,10 @@ const productAPIController = {
            let dos=0;
            let tres=0;
            let cuatro=0;
+           
+           
             Products.forEach(Product => {
+                
                 if(Product.category_id ===1){
                 uno++;
                 }
@@ -34,7 +53,9 @@ const productAPIController = {
                 if(Product.category_id ===4){
                     cuatro++;
                   }
-               // console.log(uno,dos,tres,cuatro) 
+                 
+                  
+                //console.log(uno,dos,tres,cuatro) 
                 let prod ={};
                
                 prod['id'] = Product.id
@@ -49,6 +70,7 @@ const productAPIController = {
                
                 prod['detail'] = `api/products/${Product.id}`
                 list.push(prod)
+                
                 
                 
      

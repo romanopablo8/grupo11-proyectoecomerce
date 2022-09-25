@@ -2,7 +2,7 @@ import React from 'react';
 //import imagenFondo from '../assets/images/mandalorian.jpg';
 import GenresInDb from './GenresInDb';
 import ContentRowMovies from './ContentRowMovies';
-
+import ListadoProductos from './ListadoProductos';
 import {useState, useEffect} from 'react';
 function ContentRowTop() {
 	
@@ -63,30 +63,34 @@ function ContentRowTop() {
 						<div className="col-lg-6 mb-4">
 							<div className="card shadow mb-4">
 								<div className="card-header py-3">
-									<h5 className="m-0 font-weight-bold text-gray-800">Last movie in Data Base</h5>
+									<h5 className="m-0 font-weight-bold text-gray-800">Ultimo producto de la base de datos</h5>
 								</div>
+								{isLoading ? ( <div>Loading ...</div> ) : (<div>{
 								<div className="card-body">
 									<div className="text-center">
 										<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={product.image} alt=" Star Wars - Mandalorian "/>
 									</div>
-									{isLoading ? ( <div>Loading ...</div> ) : (<p>{}</p>)}
-									<p>{product.descripcion}</p>
-									<p>{product.price}</p>
-									<p>{product.reference}</p>
-									<p>{product.id}</p>
+								
+									<p>Nombre :{product.name}</p>
+									<p>Descripcion :{product.descripcion}</p>
+									<p>Price :{product.price}</p>
+									<p>Reference :{product.reference}</p>
+									<p>id : {product.id}</p>
 									
 								
 									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
-								</div>
-							</div>
+								</div>}</div>)}
+							</div>	
 						</div>
 						{/*<!-- End content row last movie in Data Base -->*/}
 
 						{/*<!-- Genres in DB -->*/}
-						<GenresInDb />
+						<ListadoProductos />
+						
 
 						{/*<!--End Genres In Db-->*/}		
 					</div>
+					<GenresInDb />
 				</div>
 				{/*<!--End Content Row Top-->*/}
 

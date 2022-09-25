@@ -5,6 +5,7 @@ const productAPIController  =require('../../controllers/api/productAPIController
 //Listado de users
 router.get('/', productAPIController.list);
 //Details
+router.get('/total', productAPIController.categorytotal);
 router.get('/:id', productAPIController.detail);
 
 

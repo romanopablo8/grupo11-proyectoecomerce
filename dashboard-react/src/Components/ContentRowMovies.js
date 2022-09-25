@@ -10,10 +10,10 @@ function ContentRowTop (){
     const [product4, setproduct4] = useState([]);
     useEffect(() => {
     // declare the async data fetching function
-    fetch('http://localhost:3000/api/products').then((response) => 
+    fetch('http://localhost:3000/api/products/total').then((response) => 
             response.json()
         ).then(data => {
-            setproduct1(data.data.products);
+            setproduct1(data.meta.total);
         }).catch(error => console.log(error))
        
         fetch('http://localhost:3000/api/products').then((response) => 
@@ -22,10 +22,10 @@ function ContentRowTop (){
         setproduct2(data.data.count);
         }).catch(error => console.log(error))
             
-    fetch('http://localhost:3000/api/products/1').then((response) => 
+    fetch('http://localhost:3000/api/users').then((response) => 
     response.json()
 ).then(data => {
-    setproduct4(data.data);
+    setproduct4(data.data.count);
 }).catch(error => console.log(error))
         
         fetch('http://localhost:3000/api/products').then((response) => 
@@ -39,51 +39,40 @@ function ContentRowTop (){
    
   let productInDataBase = {
     color:   "primary",
-    titulo: "Movies in Data Base",
-    valor: 21,
+    titulo: "Total de productos",
+    valor:  product2.toString(),
     icono: "fas fa-film",
 } 
 
 let amount ={
     color:   "success",
-    titulo: "Total awards",
-    valor: 79,
+    titulo: "Total de usuarios",
+    valor:  product4.toString(),
     icono: "fas fa-award",
 }
 
 let user = {
     color:   "warning",
-    titulo: "Actors quantity",
-    valor: 49,
+    titulo: "Total de categorías",
+    valor:  product1.toString(),
     icono: "fas fa-user",
-}
-let user2 = {
-    color:   "warning",
-    titulo: "Actors quantity",
-    valor: 49,
-    icono: "fas fa-user",
-}
-let cardProps = [productInDataBase,amount,user,user2];
-const elementVariable = useRef(null)
-//console.log(elementVariable.current)
-/*
-function ContentRowTop(){
-   */ return (
-       
-<div>	
-             <ul ref={elementVariable}>
-             {product2}
-              </ul>
-                 <ul> 
-             { product1.map((category) => <li key = {category.id}>{category.name} </li>) }
-               </ul>  
-             <ul>
-             {product.Deportivas}
-              </ul> 
-        </div>
-      
-    )
 }
 
+let cardProps = [productInDataBase,amount,user];
+
+
+    return (
+    
+        <div className="row">
+            
+            {cardProps.map( (movie, i) => {
+
+                return <SmallCard {...movie} key={i}/>
+            
+            })}
+
+        </div>
+    )
+}
 
 export default ContentRowTop;
