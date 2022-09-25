@@ -91,7 +91,7 @@ const productAPIController = {
                     }
                      ,
                      products:list,
-                     
+                     ultimo:list.slice(-1)
                     },
                                
                      products: {Products

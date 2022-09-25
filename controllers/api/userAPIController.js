@@ -26,7 +26,8 @@ users.forEach(user => {
                     url: 'api/users/'
                 },
                 data:{count:users.length,
-                     list:list
+                     list:list,
+                     ultimo:list.slice(-1)
                 },
                 users 
             
