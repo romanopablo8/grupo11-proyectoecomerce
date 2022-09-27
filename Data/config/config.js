@@ -1,14 +1,12 @@
-
 module.exports = {
-  "development": {
-  host: "localhost",
-  username: "root",
-  password: "",
-  database: "ecomerce_db",
-  dialect: "mysql",
-},
+  development: {
+    host: "localhost",
+    username: "root",
+    password: "",
+    database: "ecomerce_db",
+    dialect: "mysql",
+  },
 };
-
 
 /* module.exports = {
     "development": {
