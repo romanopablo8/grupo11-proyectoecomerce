@@ -37,7 +37,7 @@ function SideBar() {
         <li className="nav-item">
           <a className="nav-link collapsed" href="/">
             <i className="fas fa-fw fa-table"></i>
-            <span>total de ventas</span>
+            <span>Total de Ventas</span>
           </a>
         </li>
 
@@ -45,7 +45,7 @@ function SideBar() {
         <li className="nav-item">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-table"></i>
-            <span>creación de productos</span>
+            <span>Creación de Productos</span>
           </a>
         </li>
 
@@ -53,7 +53,7 @@ function SideBar() {
         <li className="nav-item">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-table"></i>
-            <span>edición de productos</span>
+            <span>Edición de Productos</span>
           </a>
         </li>
 
@@ -61,7 +61,7 @@ function SideBar() {
         <li className="nav-item">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-table"></i>
-            <span>eliminar productos</span>
+            <span>Eliminar Productos</span>
           </a>
         </li>
 
@@ -69,7 +69,7 @@ function SideBar() {
         <li className="nav-item">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-table"></i>
-            <span>5 productos vendidos</span>
+            <span>Productos mas Vendidos</span>
           </a>
         </li>
 

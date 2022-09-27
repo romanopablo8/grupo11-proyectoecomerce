@@ -47,7 +47,7 @@ class GenresInDb extends Component {
                 <div className="col-lg-6 mb-4">
                   <div className="card text-white bg-dark  shadow">
                     <div className="card-body">
-                      lentes niños : {this.state.genreList.chicos}
+                      Lentes Niños : {this.state.genreList.chicos}
                     </div>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ class GenresInDb extends Component {
                 <div className="col-lg-6 mb-4">
                   <div className="card text-white bg-dark  shadow">
                     <div className="card-body">
-                      lentes : {this.state.genreList.lentes}
+                      Lentes : {this.state.genreList.lentes}
                     </div>
                   </div>
                 </div>

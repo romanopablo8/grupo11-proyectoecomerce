@@ -73,42 +73,38 @@ form .userdetalle-register, .input-register{
     left: 100px;
 
 }
- */  
- .boton-register {
-    height: 45px;
-   }
- 
-.boton-register input{
-    height: 100%;
-    width: 300px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: 500;
-    background: linear-gradient(135deg, #8ac7f0, #bb83d1);
-    
-
-}
-.boton-register input:hover{
-    background: linear-gradient(135deg, #bb83d1, #8ac7f0 );
-
+ */
+.boton-register {
+  height: 45px;
 }
 
+.boton-register input {
+  height: 100%;
+  width: 300px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #8ac7f0, #bb83d1);
+}
+.boton-register input:hover {
+  background: linear-gradient(135deg, #bb83d1, #8ac7f0);
+}
 
 .formulario__group-correct .formulario__validation-state {
-	color: #1ed12d;
-	opacity:1;
+  color: #1ed12d;
+  opacity: 1;
 }
 .formulario__group-incorrect .formulario__validation-state {
-	color: #bb2929;
-    border: 2px solid #bb2929;
-	opacity:1;
+  color: #bb2929;
+  border: 2px solid #bb2929;
+  opacity: 1;
 }
 .ocultar {
-    display: none;
+  display: none;
 }
 
 .mostrar {
-    display: block;
+  display: block;
 }

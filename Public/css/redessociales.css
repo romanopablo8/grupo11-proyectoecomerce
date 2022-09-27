@@ -1,16 +1,16 @@
 body {
-    background-color: black;
+  background-color: black;
 }
 
 .div-redessociales {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: medium;
-    color: white;
-    background-color: black;
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    height: 100%;
-    align-items: center;
-    text-align: justify;
+  font-family: "Courier New", Courier, monospace;
+  font-size: medium;
+  color: white;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: center;
+  text-align: justify;
 }
